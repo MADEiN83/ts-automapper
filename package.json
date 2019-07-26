@@ -1,0 +1,25 @@
+{
+  "name": "automapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "start:prod": "node ./build/index.js",
+    "build": "rm -rf build && tsc",
+    "test": "mocha -r ts-node/register tests/**/*.test.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
+    "typescript": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "ts-node": "^8.3.0"
+  }
+}
