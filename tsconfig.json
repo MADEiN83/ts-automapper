@@ -9,6 +9,6 @@
     "types": ["mocha", "chai"],
     "typeRoots": ["typings"]
   },
-  "include": ["./src/**.ts"],
+  "include": ["./src/**.ts", "index.ts"],
   "exclude": ["node_modules", "firefunctions"]
 }

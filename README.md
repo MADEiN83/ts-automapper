@@ -1,4 +1,4 @@
-# ts-automapper
+# ts-automapper [![npm version](https://badge.fury.io/js/ts-automapper.svg)](https://www.npmjs.com/package/ts-automapper)
 
 ## Installation
 
