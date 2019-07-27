@@ -32,4 +32,49 @@ describe("AutoMapper Tests", () => {
     assert.equal(result.id, 1);
     assert.equal(result.label, "Un Label ici");
   });
+
+  it("Nested Mapping", () => {
+    const data: IData1 = { column: "Anthony TEST" };
+
+    AutoMapper.createDefinition<IData1, IData2>("three").map(
+      p => p.column,
+      p => p.user.firstname
+    );
+
+    const result: IData2 = AutoMapper.exec(data, "three");
+    assert.equal(result.user.firstname, "Anthony TEST");
+  });
+
+  it("Nested complexe Mapping", () => {
+    const data: IData1 = {
+      column: "Anthony TEST",
+      nested: { value: "Nested value here" }
+    };
+
+    AutoMapper.createDefinition<IData1, IData2>("four").map(
+      p => p.nested && p.nested.value,
+      p => p.user.firstname
+    );
+
+    const result: IData2 = AutoMapper.exec(data, "four");
+    assert.equal(result.user.firstname, "Nested value here");
+  });
+
+  it("Type mapping", () => {
+    const data: IData1 = {
+      column: "7_ADS"
+    };
+
+    AutoMapper.createDefinition<IData1, IData2>("five").map(
+      p => p.column,
+      p => p.id,
+      {
+        operation: (p: string) => p.split("_")[0],
+        type: AutoMapper.TYPES.INTEGER
+      }
+    );
+
+    const result: IData2 = AutoMapper.exec(data, "five");
+    assert.equal(result.id, 7);
+  });
 });
