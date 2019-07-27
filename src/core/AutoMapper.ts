@@ -31,7 +31,11 @@ export default class AutoMapper {
     key: string
   ): TDestination => {
     const [mapping] = AutoMapper.mappings.filter(m => m.key === key);
-    const result: TDestination = AutoMapper.parseMapping(data, mapping.mapping);
+
+    let result: any = {} as TDestination;
+    if (!mapping) return result;
+
+    result = AutoMapper.parseMapping(data, mapping.mapping);
     return result;
   };
 
@@ -40,7 +44,11 @@ export default class AutoMapper {
     key: string
   ): TDestination[] => {
     const [mapping] = AutoMapper.mappings.filter(m => m.key === key);
-    const result: TDestination[] = list.map((data: TSource) =>
+
+    let result: any = {} as TDestination[];
+    if (!mapping) return result;
+
+    result = list.map((data: TSource) =>
       AutoMapper.parseMapping(data, mapping.mapping)
     );
 
