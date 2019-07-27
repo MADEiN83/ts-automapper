@@ -5,7 +5,7 @@ import { getKeyFromPredicate, convert } from "../utils";
 export default class AutoMapper {
   static TYPES = { STRING: "string", INTEGER: "int", FLOAT: "float" };
 
-  private static mappings: IMappings[] = [];
+  private static mappingsList: IMappings[] = [];
 
   /**
    * Creates a mapping definition with an unique key.
@@ -16,7 +16,7 @@ export default class AutoMapper {
     key: string
   ): Mapping<TSource, TDestination> => {
     const mapping = new Mapping<TSource, TDestination>();
-    AutoMapper.mappings.push({ key, mapping });
+    AutoMapper.mappingsList.push({ key, mapping });
     return mapping;
   };
 
@@ -30,12 +30,12 @@ export default class AutoMapper {
     data: TSource,
     key: string
   ): TDestination => {
-    const [mapping] = AutoMapper.mappings.filter(m => m.key === key);
+    const [mappingElement] = AutoMapper.mappingsList.filter(m => m.key === key);
 
     let result: any = {} as TDestination;
-    if (!mapping) return result;
+    if (!mappingElement) return result;
 
-    result = AutoMapper.parseMapping(data, mapping.mapping);
+    result = AutoMapper.parseMapping(data, mappingElement.mapping);
     return result;
   };
 
@@ -43,13 +43,13 @@ export default class AutoMapper {
     list: TSource[],
     key: string
   ): TDestination[] => {
-    const [mapping] = AutoMapper.mappings.filter(m => m.key === key);
+    const [mappingElement] = AutoMapper.mappingsList.filter(m => m.key === key);
 
     let result: any = {} as TDestination[];
-    if (!mapping) return result;
+    if (!mappingElement) return result;
 
     result = list.map((data: TSource) =>
-      AutoMapper.parseMapping(data, mapping.mapping)
+      AutoMapper.parseMapping(data, mappingElement.mapping)
     );
 
     return result;
