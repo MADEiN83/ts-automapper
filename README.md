@@ -1,4 +1,4 @@
-# ts-automapper [![npm version](https://badge.fury.io/js/ts-automapper.svg)](https://www.npmjs.com/package/ts-automapper)
+# ts-automapper [![npm version](https://badge.fury.io/js/ts-automapper.svg)](https://www.npmjs.com/package/ts-automapper) [![Build Status](https://travis-ci.org/MADEiN83/ts-automapper.svg?branch=master)](https://travis-ci.org/MADEiN83/ts-automapper) ![npm](https://img.shields.io/npm/dm/ts-automapper) ![npm](https://img.shields.io/npm/dt/ts-automapper) ![npm bundle size](https://img.shields.io/bundlephobia/min/ts-automapper)
 
 - [Installation](#installation)
 - [Usage](#usage)
