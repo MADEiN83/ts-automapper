@@ -1,0 +1,17 @@
+{
+  "name": "ts-automapper",
+  "version": "1.0.5",
+  "description": "Magic library for node to be able to transform object to another object",
+  "main": "index.js",
+  "author": "Anthony DI STEFANO",
+  "homepage": "https://github.com/MADEiN83/ts-automapper",
+  "bugs": {
+    "url": "https://github.com/MADEiN83/ts-automapper/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MADEiN83/ts-automapper"
+  },
+  "license": "ISC",
+  "keywords": ["typescript", "mapping", "map", "object", "javascript"]
+}
