@@ -56,8 +56,8 @@ export const setValueByKeys = (target: any, value: any, keys: string[]) => {
   return orig;
 };
 
-export const getValueByKeys = (target: any, dots: string[]) => {
-  let temp = target;
-  dots.forEach(p => (temp = temp[p]));
-  return temp;
-};
+// export const getValueByKeys = (target: any, dots: string[]) => {
+//   let temp = target;
+//   dots.forEach(p => (temp = temp[p]));
+//   return temp;
+// };

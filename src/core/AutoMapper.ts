@@ -1,11 +1,6 @@
 import { IMappings } from "./interface";
 import Mapping from "./Mapping";
-import {
-  getKeysFromPredicate,
-  convert,
-  getValueByKeys,
-  setValueByKeys
-} from "../utils";
+import { getKeysFromPredicate, convert, setValueByKeys } from "../utils";
 
 export default class AutoMapper {
   static TYPES = { STRING: "string", INTEGER: "int", FLOAT: "float" };
@@ -67,16 +62,13 @@ export default class AutoMapper {
     let result: any = {} as TDestination;
 
     mapping.mapsList.forEach(({ src, dst, options }) => {
-      const sourceKeys = getKeysFromPredicate(src);
       const destinationKeys = getKeysFromPredicate(dst);
 
-      let tempValue = getValueByKeys(data, sourceKeys); //data[sourceKey];
+      let tempValue = src(data);
       if (options.operation) {
         tempValue = options.operation(tempValue);
       }
       tempValue = convert(tempValue, options.type);
-
-      // result[destinationKey] = tempValue;
 
       setValueByKeys(result, tempValue, destinationKeys);
     });
