@@ -1,10 +1,22 @@
 import AutoMapper from "../core/AutoMapper";
 
-export const getKeyFromPredicate = <TSource>(
+export const getKeysFromPredicate = <TSource>(
   predicate: (object: TSource) => any
-): string => {
-  const key = /\.([^\.;]+);?\s*/.exec(predicate.toString());
-  return key && key.length !== 0 ? key[1] : "";
+): string[] => {
+  const regex = /(\.\w+)/g;
+  let keys = [];
+  let m;
+
+  while ((m = regex.exec(predicate.toString())) !== null) {
+    // This is necessary to avoid infinite loops with zero-width matches
+    if (m.index === regex.lastIndex) {
+      regex.lastIndex++;
+    }
+
+    keys.push(m[0].replace(".", ""));
+  }
+
+  return keys;
 };
 
 export const convert = (
@@ -20,4 +32,32 @@ export const convert = (
     case AutoMapper.TYPES.INTEGER:
       return Number(data) || 0;
   }
+};
+
+export const setValueByKeys = (target: any, value: any, keys: string[]) => {
+  const len = keys.length;
+  const orig = target;
+
+  for (let i = 0; i < len; i++) {
+    let prop = keys[i];
+
+    if (!target[prop]) {
+      target[prop] = {};
+    }
+
+    if (i === len - 1) {
+      target[prop] = value;
+      break;
+    }
+
+    target = target[prop];
+  }
+
+  return orig;
+};
+
+export const getValueByKeys = (target: any, dots: string[]) => {
+  let temp = target;
+  dots.forEach(p => (temp = temp[p]));
+  return temp;
 };
