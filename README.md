@@ -34,7 +34,7 @@ After we create a mapping between interfaces, we can now create all mappings bet
 For example, if we want to map the property sourceObject.srcOther to destinationObjet.other, we can define rule like that:
 
 ```ts
-AutoMapper.createDefinition<ISource, IDestination>()
+AutoMapper.createDefinition<ISource, IDestination>("UNIQUE_KEY")
   .map(src => src.srcProperty, dest => dest.destProperty)
   .map(src => src.srcOther, dest => dest.other);
 ```
