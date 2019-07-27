@@ -1,12 +1,12 @@
 {
   "name": "ts-automapper",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Magic library for node to be able to transform object to another object",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "start": "nodemon",
     "start:prod": "node ./index.js",
-    "build": "rm -rf build && tsc && cp package.json ./build/package.json && cp README.md ./build/README.md",
+    "build": "rm -rf build && tsc && cp package.prod.json ./build/package.json && cp README.md ./build/README.md",
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
     "deploy": "npm run build && cd ./build && npm publish"
   },
