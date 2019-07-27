@@ -23,7 +23,8 @@ So, if we have an object of type `ISource` and we want a object of type `IDestin
 import AutoMapper from "ts-automapper";
 import { ISource, IDestination } = "../path/of/your/interfaces.ts";
 
-AutoMapper.createMap<ISource, IDestination>('UNIQUE_KEY');
+AutoMapper.createDefinition<ISource, IDestination>('UNIQUE_KEY')
+...
 ```
 
 ### Map your field(s)
@@ -33,7 +34,7 @@ After we create a mapping between interfaces, we can now create all mappings bet
 For example, if we want to map the property sourceObject.srcOther to destinationObjet.other, we can define rule like that:
 
 ```ts
-AutoMapper.createMap<ISource, IDestination>();
+AutoMapper.createDefinition<ISource, IDestination>()
   .map(src => src.srcProperty, dest => dest.destProperty)
   .map(src => src.srcOther, dest => dest.other);
 ```
