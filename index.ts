@@ -1,2 +1,2 @@
 import AutoMapper from "./src/core/AutoMapper";
-export { AutoMapper };
+export default AutoMapper;
