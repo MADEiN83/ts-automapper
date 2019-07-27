@@ -37,6 +37,7 @@
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.7",
+    "assert": "^2.0.0",
     "ts-node": "^8.3.0"
   }
 }
