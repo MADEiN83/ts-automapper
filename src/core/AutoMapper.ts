@@ -22,12 +22,12 @@ export default class AutoMapper {
 
   /**
    * Executes a mapping definition with an unique key.
-   * @param {TSource} data The object.
+   * @param {TSource} data The source object.
    * @param {string} key The unique key to be able to retrieve the mapping.
    * @return {TDestination} Returns a new instance of TDestination.
    */
   static exec = <TSource, TDestination>(
-    data: TSource,
+    source: TSource,
     key: string
   ): TDestination => {
     const [mappingElement] = AutoMapper.mappingsList.filter(m => m.key === key);
@@ -35,10 +35,16 @@ export default class AutoMapper {
     let result: any = {} as TDestination;
     if (!mappingElement) return result;
 
-    result = AutoMapper.parseMapping(data, mappingElement.mapping);
+    result = AutoMapper.parseMapping(source, mappingElement.mapping);
     return result;
   };
 
+  /**
+   * Executes a mapping definition with an unique key.
+   * @param {TSource[]} list The list of source objects.
+   * @param {string} key The unique key to be able to retrieve the mapping.
+   * @return {TDestination[]} Returns a list of TDestination.
+   */
   static execAll = <TSource, TDestination>(
     list: TSource[],
     key: string
@@ -52,6 +58,23 @@ export default class AutoMapper {
       AutoMapper.parseMapping(data, mappingElement.mapping)
     );
 
+    return result;
+  };
+
+  /**
+   * Executes a mapping definition with an unique key and assign previously created TDestination object.
+   * @param {TSource} source The source objects.
+   * @param {TDestination} destination The object that will be injected by TSource value(s).
+   * @param {string} key The unique key to be able to retrieve the mapping.
+   * @return {TDestination[]} Returns the destination object after update.
+   */
+  static assign = <TSource, TDestination>(
+    source: TSource,
+    destination: TDestination,
+    key: string
+  ): TDestination => {
+    const values: TDestination = AutoMapper.exec(source, key);
+    const result: TDestination = (<any>Object).assign({}, destination, values);
     return result;
   };
 
