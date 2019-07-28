@@ -77,4 +77,56 @@ describe("AutoMapper Tests", () => {
     const result: IData2 = AutoMapper.exec(data, "five");
     assert.equal(result.id, 7);
   });
+
+  it("Assign existing object & nested assignation", () => {
+    const data: IData1 = {
+      column: "7_Marion"
+    };
+
+    const data2: IData2 = {
+      id: 9,
+      label: "Hey",
+      user: { firstname: "Anthony" }
+    };
+
+    AutoMapper.createDefinition<IData1, IData2>("six")
+      .map(p => p.column, p => p.id, {
+        operation: (p: string) => p.split("_")[0],
+        type: AutoMapper.TYPES.INTEGER
+      })
+      .map(p => p.column, p => p.user.firstname, {
+        operation: (p: string) => p.split("_")[1]
+      });
+
+    const result: IData2 = AutoMapper.assign(data, data2, "six");
+    assert.equal(result.id, 7);
+    assert.equal(result.user.firstname, "Marion");
+  });
+
+  it("Conditionnal mapping", () => {
+    const data: IData1 = {
+      column: "7_Marion",
+      nested: { value: "false" }
+    };
+
+    const data2: IData2 = {
+      id: 9,
+      label: "Hey",
+      user: { firstname: "Anthony" }
+    };
+
+    AutoMapper.createDefinition<IData1, IData2>("sept")
+      .map(p => p.column, p => p.id, {
+        operation: (p: string) => p.split("_")[0],
+        type: AutoMapper.TYPES.INTEGER
+      })
+      .map(p => p.column, p => p.user.firstname, {
+        operation: (p: string) => p.split("_")[1],
+        condition: (p: IData1) => p.nested && p.nested.value === "true"
+      });
+
+    const result: IData2 = AutoMapper.assign(data, data2, "sept");
+    assert.equal(result.id, 7);
+    assert.equal(result.user.firstname, "Anthony");
+  });
 });

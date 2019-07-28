@@ -1,11 +1,17 @@
 import Mapping from "./Mapping";
 
 export interface IMappings {
+  /** Unique key for the mapping definition. */
   key: string;
+  /** The mapping definition. */
   mapping: Mapping<any, any>;
 }
 
-export interface IMappingOptions {
+export interface IMappingOptions<TSource> {
+  /** The property type (number, float, etc.). */
   type?: string;
-  operation?: Function;
+  /** Perform an operation on property. */
+  operation?: (data: any) => any;
+  /** Perform a conditional operation and stop process if returns false. */
+  condition?: (data: TSource) => boolean | undefined;
 }

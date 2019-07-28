@@ -79,21 +79,26 @@ export default class AutoMapper {
   };
 
   private static parseMapping = <TSource, TDestination>(
-    data: any,
+    source: TSource,
     mapping: Mapping<TSource, TDestination>
   ): TDestination => {
     let result: any = {} as TDestination;
 
-    mapping.mapsList.forEach(({ src, dst, options }) => {
-      const destinationKeys = getKeysFromPredicate(dst);
+    mapping.mapsList.forEach(map => {
+      const { sourcePredicate, destinationPredicate, options } = map;
+      const destinationKeys = getKeysFromPredicate(destinationPredicate);
+      const mustContinue = options.condition ? options.condition(source) : true;
 
-      let tempValue = src(data);
-      if (options.operation) {
-        tempValue = options.operation(tempValue);
+      if (mustContinue) {
+        let valueToAssign: any = options.operation
+          ? options.operation(sourcePredicate(source))
+          : sourcePredicate(source);
+
+        // Type conversion.
+        valueToAssign = convert(valueToAssign, options.type);
+
+        setValueByKeys(result, valueToAssign, destinationKeys);
       }
-      tempValue = convert(tempValue, options.type);
-
-      setValueByKeys(result, tempValue, destinationKeys);
     });
 
     return result;
