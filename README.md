@@ -1,13 +1,33 @@
 # ts-automapper [![npm version](https://badge.fury.io/js/ts-automapper.svg)](https://www.npmjs.com/package/ts-automapper) [![Build Status](https://travis-ci.org/MADEiN83/ts-automapper.svg?branch=master)](https://travis-ci.org/MADEiN83/ts-automapper) ![npm](https://img.shields.io/npm/dm/ts-automapper) ![npm](https://img.shields.io/npm/dt/ts-automapper) ![npm bundle size](https://img.shields.io/bundlephobia/min/ts-automapper)
 
-- [Installation](#installation)
-- [Usage](#usage)
+- [TODO](#todo)
+- [Install](#install)
+- [Why?](#why)
 - [Create mapping definition](#create-mapping-definition)
   - [Params](#params)
   - [Example](#example)
 - [Map](#map)
   - [Params](#params-1)
   - [Example](#example-1)
+- [Exec](#exec)
+  - [Params](#params-2)
+  - [Example](#example-2)
+- [Assign](#assign)
+  - [Params](#params-3)
+  - [Example](#example-3)
+
+## TODO
+
+- [x] Create mapping definition
+- [x] Execute a mapping TSource > TDestination
+- [x] Nested mapping (source side)
+- [x] Nested mapping (destination side)
+- [x] Assign existing object
+- [ ] More operations
+  - [ ] Conditionnal mapping of property (eg.: exists, contains, equals, ...)
+  - [ ] Condition based on other property
+- Better unique key management (I want to remove `key` arg from methods)
+- ...
 
 ## Install
 
@@ -154,10 +174,42 @@ AutoMapper.createDefinition<ISource, IDestination>("UNIQUE_KEY")
 
 > You can chain your rules!
 
-## TODO
+## Exec
 
-- Nested mapping (source side)
-- Nested mapping (destination side)
-- More operations
-- Conditionnal mapping
-- ...
+After create a definition, you'll just call `exec` method with your values as input and the unique key (previously created).
+
+```ts
+const result: IDestination = AutoMapper.exec(src, key);
+```
+
+### Params
+
+- `src` **{ISource}**: The source object.
+- `key` **{string}**: The unique key.
+
+### Example
+
+```ts
+const result: IDestination = AutoMapper.exec(source, "test");
+```
+
+## Assign
+
+You can assign values to an existing object. Call the `assign` method will do the job for you.
+
+```ts
+const result: IDestination = AutoMapper.assign(src, dest, key);
+```
+
+### Params
+
+- `src` **{ISource}**: The source object.
+- `dest` **{IDestination}**: The destination object.
+- `key` **{string}**: The unique key.
+
+### Example
+
+```ts
+const user: IUser = ....
+const result: IUser = AutoMapper.assign(source, user, "test");
+```
