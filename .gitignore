@@ -1,5 +1,11 @@
 node_modules
-build
+
+dist/src
+dist/*.d.ts
+dist/*.js
+dist/*.md
+
 private
 .git
 .env
+deploy.sh

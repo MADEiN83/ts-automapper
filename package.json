@@ -6,9 +6,8 @@
   "scripts": {
     "start": "nodemon",
     "start:prod": "node ./index.js",
-    "build": "rm -rf build && tsc && cp package.prod.json ./build/package.json && cp README.md ./build/README.md",
-    "test": "mocha -r ts-node/register tests/**/*.test.ts",
-    "deploy": "npm run build && cd ./build && npm publish"
+    "build": "tsc",
+    "test": "mocha -r ts-node/register tests/**/*.test.ts"
   },
   "author": "Anthony DI STEFANO",
   "homepage": "https://github.com/MADEiN83/ts-automapper",

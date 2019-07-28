@@ -13,5 +13,11 @@
     "url": "https://github.com/MADEiN83/ts-automapper"
   },
   "license": "ISC",
-  "keywords": ["typescript", "mapping", "map", "object", "javascript"]
+  "keywords": [
+    "typescript",
+    "mapping",
+    "map",
+    "object",
+    "javascript"
+  ]
 }
