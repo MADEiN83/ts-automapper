@@ -25,6 +25,14 @@ export default class AutoMapper {
 
   /**
    * Creates a mapping definition with an unique key.
+   *
+   * ```ts
+   * import AutoMapper from "ts-automapper";
+   * import { ISource, IDestination } = "../path/of/your/interfaces.ts";
+   *
+   * AutoMapper.createDefinition<ISource, IDestination>('UNIQUE_KEY');
+   * ```
+   *
    * @param {string} key The unique key to be able to retrieve the mapping.
    * @return {Mapping<TSource, TDestination>} Returns the mapping class.
    */
@@ -38,6 +46,15 @@ export default class AutoMapper {
 
   /**
    * Executes a mapping definition with an unique key.
+   *
+   * ```ts
+   * import AutoMapper from "ts-automapper";
+   * import { ISource, IDestination } = "../path/of/your/interfaces.ts";
+   *
+   * const sourceData: ISource = ...
+   * const result: IDestination = AutoMapper.exec(sourceData, 'UNIQUE_KEY');
+   * ```
+   *
    * @param {TSource} data The source object.
    * @param {string} key The unique key to be able to retrieve the mapping.
    * @return {TDestination} Returns a new instance of TDestination.
@@ -57,6 +74,15 @@ export default class AutoMapper {
 
   /**
    * Executes a mapping definition with an unique key.
+   *
+   * ```ts
+   * import AutoMapper from "ts-automapper";
+   * import { ISource, IDestination } = "../path/of/your/interfaces.ts";
+   *
+   * const sourceDataList: ISource[] = [...]
+   * const result: IDestination[] = AutoMapper.execAll(sourceDataList, 'UNIQUE_KEY');
+   * ```
+   *
    * @param {TSource[]} list The list of source objects.
    * @param {string} key The unique key to be able to retrieve the mapping.
    * @return {TDestination[]} Returns a list of TDestination.
@@ -79,6 +105,17 @@ export default class AutoMapper {
 
   /**
    * Executes a mapping definition with an unique key and assign previously created TDestination object.
+   *
+   * ```ts
+   * import AutoMapper from ".ts-automapper";
+   * import { ISource, IDestination } = "../path/of/your/interfaces.ts";
+   *
+   * let destinationData: IDestination = this.repository.fetch(1); // Real data.
+   * const sourceData: ISource = ... // User input to merge into destinationData variable.
+   *
+   * destinationData = AutoMapper.assign(sourceData, destinationData, 'UNIQUE_KEY');
+   * ```
+   *
    * @param {TSource} source The source objects.
    * @param {TDestination} destination The object that will be injected by TSource value(s).
    * @param {string} key The unique key to be able to retrieve the mapping.

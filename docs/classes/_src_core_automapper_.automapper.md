@@ -38,7 +38,7 @@ Static class for AutoMapper.
 
 ▪ **mappingsList**: *[IMappings](../interfaces/_src_core_interface_.imappings.md)[]* =  []
 
-*Defined in [src/core/AutoMapper.ts:24](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/core/AutoMapper.ts#L24)*
+*Defined in [src/core/AutoMapper.ts:24](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L24)*
 
 The mappings list created by the method `createDefinition`
 
@@ -52,9 +52,19 @@ The mappings list created by the method `createDefinition`
 
 ▸ **assign**<**TSource**, **TDestination**>(`source`: `TSource`, `destination`: `TDestination`, `key`: string): *`TDestination`*
 
-*Defined in [src/core/AutoMapper.ts:88](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/core/AutoMapper.ts#L88)*
+*Defined in [src/core/AutoMapper.ts:124](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L124)*
 
 Executes a mapping definition with an unique key and assign previously created TDestination object.
+
+```ts
+import AutoMapper from ".ts-automapper";
+import { ISource, IDestination } = "../path/of/your/interfaces.ts";
+
+let destinationData: IDestination = this.repository.fetch(1); // Real data.
+const sourceData: ISource = ... // User input to merge into destinationData variable.
+
+destinationData = AutoMapper.assign(sourceData, destinationData, 'UNIQUE_KEY');
+```
 
 **Type parameters:**
 
@@ -80,9 +90,16 @@ ___
 
 ▸ **createDefinition**<**TSource**, **TDestination**>(`key`: string): *[Mapping](_src_core_mapping_.mapping.md)‹*`TSource`*, *`TDestination`*›*
 
-*Defined in [src/core/AutoMapper.ts:31](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/core/AutoMapper.ts#L31)*
+*Defined in [src/core/AutoMapper.ts:39](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L39)*
 
 Creates a mapping definition with an unique key.
+
+```ts
+import AutoMapper from "ts-automapper";
+import { ISource, IDestination } = "../path/of/your/interfaces.ts";
+
+AutoMapper.createDefinition<ISource, IDestination>('UNIQUE_KEY');
+```
 
 **Type parameters:**
 
@@ -106,9 +123,17 @@ ___
 
 ▸ **exec**<**TSource**, **TDestination**>(`source`: `TSource`, `key`: string): *`TDestination`*
 
-*Defined in [src/core/AutoMapper.ts:45](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/core/AutoMapper.ts#L45)*
+*Defined in [src/core/AutoMapper.ts:62](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L62)*
 
 Executes a mapping definition with an unique key.
+
+```ts
+import AutoMapper from "ts-automapper";
+import { ISource, IDestination } = "../path/of/your/interfaces.ts";
+
+const sourceData: ISource = ...
+const result: IDestination = AutoMapper.exec(sourceData, 'UNIQUE_KEY');
+```
 
 **Type parameters:**
 
@@ -133,9 +158,17 @@ ___
 
 ▸ **execAll**<**TSource**, **TDestination**>(`list`: `TSource`[], `key`: string): *`TDestination`[]*
 
-*Defined in [src/core/AutoMapper.ts:64](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/core/AutoMapper.ts#L64)*
+*Defined in [src/core/AutoMapper.ts:90](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L90)*
 
 Executes a mapping definition with an unique key.
+
+```ts
+import AutoMapper from "ts-automapper";
+import { ISource, IDestination } = "../path/of/your/interfaces.ts";
+
+const sourceDataList: ISource[] = [...]
+const result: IDestination[] = AutoMapper.execAll(sourceDataList, 'UNIQUE_KEY');
+```
 
 **Type parameters:**
 
@@ -160,7 +193,7 @@ ___
 
 ▸ **parseMapping**<**TSource**, **TDestination**>(`source`: `TSource`, `mapping`: [Mapping](_src_core_mapping_.mapping.md)‹*`TSource`*, *`TDestination`*›): *`TDestination`*
 
-*Defined in [src/core/AutoMapper.ts:98](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/core/AutoMapper.ts#L98)*
+*Defined in [src/core/AutoMapper.ts:134](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L134)*
 
 **Type parameters:**
 
@@ -183,7 +216,7 @@ Name | Type |
 
 ### ▪ **TYPES**: *object*
 
-*Defined in [src/core/AutoMapper.ts:17](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/core/AutoMapper.ts#L17)*
+*Defined in [src/core/AutoMapper.ts:17](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L17)*
 
 AutoMapper types.
 
@@ -195,16 +228,16 @@ AutoMapper types.
 
 • **FLOAT**: *string* = "float"
 
-*Defined in [src/core/AutoMapper.ts:17](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/core/AutoMapper.ts#L17)*
+*Defined in [src/core/AutoMapper.ts:17](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L17)*
 
 ###  INTEGER
 
 • **INTEGER**: *string* = "int"
 
-*Defined in [src/core/AutoMapper.ts:17](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/core/AutoMapper.ts#L17)*
+*Defined in [src/core/AutoMapper.ts:17](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L17)*
 
 ###  STRING
 
 • **STRING**: *string* = "string"
 
-*Defined in [src/core/AutoMapper.ts:17](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/core/AutoMapper.ts#L17)*
+*Defined in [src/core/AutoMapper.ts:17](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L17)*

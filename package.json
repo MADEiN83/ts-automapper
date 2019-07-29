@@ -1,14 +1,13 @@
 {
   "name": "ts-automapper",
-  "version": "1.0.10",
+  "version": "1.0.12",
   "description": "Magic library for node to be able to transform object to another object",
   "main": "index.ts",
   "scripts": {
     "start": "nodemon",
-    "start:prod": "node ./index.js",
     "build": "tsc && npm run doc",
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
-    "doc": "rm -rf docs && typedoc --theme markdown --platform github && rm docs/README.md && mv docs/globals.md docs/README.MD"
+    "doc": "rm -rf docs && typedoc --theme markdown --platform github && rm docs/README.md && mv docs/globals.md docs/README.md && npm run && cp README.md dist/README.md"
   },
   "author": "Anthony DI STEFANO",
   "homepage": "https://github.com/MADEiN83/ts-automapper",
