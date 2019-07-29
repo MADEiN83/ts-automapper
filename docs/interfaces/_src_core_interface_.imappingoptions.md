@@ -26,7 +26,7 @@
 
 • **condition**? : *undefined | function*
 
-*Defined in [src/core/interface.ts:16](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/core/interface.ts#L16)*
+*Defined in [src/core/interface.ts:16](https://github.com/MADEiN83/ts-automapper/blob/fb72830/src/core/interface.ts#L16)*
 
 Perform a conditional operation and stop process if returns false.
 
@@ -36,7 +36,7 @@ ___
 
 • **operation**? : *undefined | function*
 
-*Defined in [src/core/interface.ts:14](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/core/interface.ts#L14)*
+*Defined in [src/core/interface.ts:14](https://github.com/MADEiN83/ts-automapper/blob/fb72830/src/core/interface.ts#L14)*
 
 Perform an operation on property.
 
@@ -46,6 +46,6 @@ ___
 
 • **type**? : *undefined | string*
 
-*Defined in [src/core/interface.ts:12](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/core/interface.ts#L12)*
+*Defined in [src/core/interface.ts:12](https://github.com/MADEiN83/ts-automapper/blob/fb72830/src/core/interface.ts#L12)*
 
-The property type (number, float, etc.).
+Property type

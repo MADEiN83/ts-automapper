@@ -18,7 +18,7 @@
 
 ▸ **convert**(`data`: any, `type`: string | null): *any*
 
-*Defined in [src/utils/index.ts:24](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/utils/index.ts#L24)*
+*Defined in [src/utils/index.ts:24](https://github.com/MADEiN83/ts-automapper/blob/fb72830/src/utils/index.ts#L24)*
 
 **Parameters:**
 
@@ -35,7 +35,7 @@ ___
 
 ▸ **getKeysFromPredicate**(`predicate?`: undefined | function): *string[]*
 
-*Defined in [src/utils/index.ts:3](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/utils/index.ts#L3)*
+*Defined in [src/utils/index.ts:3](https://github.com/MADEiN83/ts-automapper/blob/fb72830/src/utils/index.ts#L3)*
 
 **Parameters:**
 
@@ -51,7 +51,7 @@ ___
 
 ▸ **setValueByKeys**(`target`: any, `value`: any, `keys`: string[]): *any*
 
-*Defined in [src/utils/index.ts:39](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/utils/index.ts#L39)*
+*Defined in [src/utils/index.ts:39](https://github.com/MADEiN83/ts-automapper/blob/fb72830/src/utils/index.ts#L39)*
 
 **Parameters:**
 
