@@ -8,7 +8,7 @@ Install with [npm](https://www.npmjs.com/):
 $ npm i -s ts-automapper
 ```
 
-You can read the full documentation [here](https://github.com/MADEiN83/ts-automapper/tree/devlop/docs).
+You can read the full documentation [here](https://github.com/MADEiN83/ts-automapper/tree/master/docs).
 
 ## Why should I use this library?
 

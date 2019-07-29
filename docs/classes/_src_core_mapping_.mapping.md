@@ -30,7 +30,7 @@
 
 • **mapsList**: *object[]* =  []
 
-*Defined in [src/core/Mapping.ts:5](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/core/Mapping.ts#L5)*
+*Defined in [src/core/Mapping.ts:5](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/Mapping.ts#L5)*
 
 The list of mapping
 
@@ -40,7 +40,7 @@ The list of mapping
 
 ▸ **map**(`sourcePredicate`: function, `destinationPredicate?`: undefined | function, `options?`: [IMappingOptions](../interfaces/_src_core_interface_.imappingoptions.md)‹*`TSource`*›): *[Mapping](_src_core_mapping_.mapping.md)‹*`TSource`*, *`TDestination`*›*
 
-*Defined in [src/core/Mapping.ts:21](https://github.com/MADEiN83/ts-automapper/blob/bac2dd4/src/core/Mapping.ts#L21)*
+*Defined in [src/core/Mapping.ts:21](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/Mapping.ts#L21)*
 
 Map a field of TSource to a field of TDestination
 
