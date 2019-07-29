@@ -1,8 +1,10 @@
 import AutoMapper from "../core/AutoMapper";
 
-export const getKeysFromPredicate = <TSource>(
-  predicate: (object: TSource) => any
+export const getKeysFromPredicate = (
+  predicate?: (object: any) => any
 ): string[] => {
+  if (!predicate) return [];
+
   const regex = /(\.\w+)/g;
   let keys = [];
   let m;

@@ -85,8 +85,10 @@ export default class AutoMapper {
     let result: any = {} as TDestination;
 
     mapping.mapsList.forEach(map => {
-      const { sourcePredicate, destinationPredicate, options } = map;
-      const destinationKeys = getKeysFromPredicate(destinationPredicate);
+      const { sourcePredicate, destinationPredicate, options = {} } = map;
+      const destinationKeys = getKeysFromPredicate(
+        destinationPredicate ? destinationPredicate : sourcePredicate
+      );
       const mustContinue = options.condition ? options.condition(source) : true;
 
       if (mustContinue) {
