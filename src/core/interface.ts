@@ -8,7 +8,7 @@ export interface IMappings {
 }
 
 export interface IMappingOptions<TSource> {
-  /** The property type (number, float, etc.). */
+  /** Property type */
   type?: string;
   /** Perform an operation on property. */
   operation?: (data: any) => any;

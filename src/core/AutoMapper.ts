@@ -2,9 +2,25 @@ import { IMappings } from "./interface";
 import Mapping from "./Mapping";
 import { getKeysFromPredicate, convert, setValueByKeys } from "../utils";
 
+/**
+  Static class for AutoMapper.
+
+  @class AutoMapper
+  @classdesc AutoMapper static class
+*/
 export default class AutoMapper {
+  /**
+    AutoMapper types.
+    @name AutoMapper#TYPES
+    @type object
+  */
   static TYPES = { STRING: "string", INTEGER: "int", FLOAT: "float" };
 
+  /**
+    The mappings list created by the method `createDefinition`
+    @name AutoMapper#mappingsList
+    @type IMappings[]
+  */
   private static mappingsList: IMappings[] = [];
 
   /**
@@ -66,7 +82,7 @@ export default class AutoMapper {
    * @param {TSource} source The source objects.
    * @param {TDestination} destination The object that will be injected by TSource value(s).
    * @param {string} key The unique key to be able to retrieve the mapping.
-   * @return {TDestination[]} Returns the destination object after update.
+   * @return {TDestination} Returns the destination object after update.
    */
   static assign = <TSource, TDestination>(
     source: TSource,

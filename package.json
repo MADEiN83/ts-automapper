@@ -6,9 +6,9 @@
   "scripts": {
     "start": "nodemon",
     "start:prod": "node ./index.js",
-    "build": "tsc",
+    "build": "tsc && npm run doc",
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
-    "doc": "typedoc --theme markdown --platform github && rm docs/README.md && mv docs/globals.md docs/README.MD"
+    "doc": "rm -rf docs && typedoc --theme markdown --platform github && rm docs/README.md && mv docs/globals.md docs/README.MD"
   },
   "author": "Anthony DI STEFANO",
   "homepage": "https://github.com/MADEiN83/ts-automapper",

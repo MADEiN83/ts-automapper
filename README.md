@@ -1,34 +1,5 @@
 # ts-automapper [![npm version](https://badge.fury.io/js/ts-automapper.svg)](https://www.npmjs.com/package/ts-automapper) [![Build Status](https://travis-ci.org/MADEiN83/ts-automapper.svg?branch=master)](https://travis-ci.org/MADEiN83/ts-automapper) ![npm](https://img.shields.io/npm/dm/ts-automapper) ![npm](https://img.shields.io/npm/dt/ts-automapper) ![npm bundle size](https://img.shields.io/bundlephobia/min/ts-automapper)
 
-- [TODO](#todo)
-- [Install](#install)
-- [Why?](#why)
-- [Create mapping definition](#create-mapping-definition)
-  - [Params](#params)
-  - [Example](#example)
-- [Map](#map)
-  - [Params](#params-1)
-  - [Example](#example-1)
-- [Exec](#exec)
-  - [Params](#params-2)
-  - [Example](#example-2)
-- [Assign](#assign)
-  - [Params](#params-3)
-  - [Example](#example-3)
-
-## TODO
-
-- [x] Create mapping definition
-- [x] Execute a mapping TSource > TDestination
-- [x] Nested mapping (source side)
-- [x] Nested mapping (destination side)
-- [x] Assign existing object
-- [ ] More operations
-  - [ ] Conditionnal mapping of property (eg.: exists, contains, equals, ...)
-  - [ ] Condition based on other property
-- Better unique key management (I want to remove `key` arg from methods)
-- ...
-
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
@@ -37,7 +8,9 @@ Install with [npm](https://www.npmjs.com/):
 $ npm i -s ts-automapper
 ```
 
-## why?
+You can read the full documentation [here](https://github.com/MADEiN83/ts-automapper/tree/devlop/docs).
+
+## Why should I use this library?
 
 Before:
 
@@ -121,95 +94,15 @@ const editPerson = (personInput: PersonInput): Promise<Person> => {
 };
 ```
 
-## Create mapping definition
+## TODO
 
-To create a mapping between two objects, you must call the static method `createDefinition` of the `AutoMapper` class.
-
-Method takes only one argument (an unique key) and two interfaces:
-
-- first interface must be the source interface
-- second interface must be the destination interface
-
-So, if we have an object of type `ISource` and we want a object of type `IDestination`, we should create a new mapping like that:
-
-```ts
-AutoMapper.createDefinition<ISource, IDestination>(uniqueKey);
-```
-
-### Params
-
-- `src` **{ISource}**: The source object.
-- `dest` **{IDestination}**: The destination object.
-- `uniqueKey` **{string}**: The unique key of the current mapping.
-
-### Example
-
-```ts
-import AutoMapper from "ts-automapper";
-import { ISource, IDestination } = "../path/of/your/interfaces.ts";
-
-AutoMapper.createDefinition<ISource, IDestination>('userInput_entity');
-```
-
-## Map
-
-After we create a mapping between interfaces, we can now create all mappings between all wanted properties of our objects (source & destination).
-
-```ts
-.map(sourceProperty, destinationProperty)
-```
-
-For example, if we want to map the property sourceObject.srcOther to destinationObjet.other, we can define rule like that:
-
-```ts
-AutoMapper.createDefinition<ISource, IDestination>("UNIQUE_KEY")
-  .map(src => src.srcProperty, dest => dest.destProperty)
-  .map(src => src.srcOther, dest => dest.other);
-```
-
-### Params
-
-- `src` **{ISource}**: The source object.
-- `dest` **{IDestination}**: The destination object.
-
-> You can chain your rules!
-
-## Exec
-
-After create a definition, you'll just call `exec` method with your values as input and the unique key (previously created).
-
-```ts
-const result: IDestination = AutoMapper.exec(src, key);
-```
-
-### Params
-
-- `src` **{ISource}**: The source object.
-- `key` **{string}**: The unique key.
-
-### Example
-
-```ts
-const result: IDestination = AutoMapper.exec(source, "test");
-```
-
-## Assign
-
-You can assign values to an existing object. Call the `assign` method will do the job for you.
-
-```ts
-const result: IDestination = AutoMapper.assign(src, dest, key);
-```
-
-### Params
-
-- `src` **{ISource}**: The source object.
-- `dest` **{IDestination}**: The destination object.
-- `key` **{string}**: The unique key.
-
-### Example
-
-```ts
-const user: IUser = ....
-const result: IUser = AutoMapper.assign(source, user, "test");
-```
+- [x] Create mapping definition
+- [x] Execute a mapping TSource > TDestination
+- [x] Nested mapping (source side)
+- [x] Nested mapping (destination side)
+- [x] Assign existing object
+- [ ] More operations
+  - [ ] Conditionnal mapping of property (eg.: exists, contains, equals, ...)
+  - [ ] Condition based on other property
+- Better unique key management (I want to remove `key` arg from methods)
+- ...
