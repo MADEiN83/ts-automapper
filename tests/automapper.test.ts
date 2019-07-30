@@ -115,7 +115,7 @@ describe("AutoMapper Tests", () => {
       user: { firstname: "Anthony" }
     };
 
-    AutoMapper.createDefinition<IData1, IData2>("sept")
+    AutoMapper.createDefinition<IData1, IData2>("seven")
       .map(p => p.column, p => p.id, {
         operation: (p: string) => p.split("_")[0],
         type: AutoMapper.TYPES.INTEGER
@@ -125,8 +125,27 @@ describe("AutoMapper Tests", () => {
         condition: (p: IData1) => p.nested && p.nested.value === "true"
       });
 
-    const result: IData2 = AutoMapper.assign(data, data2, "sept");
+    const result: IData2 = AutoMapper.assign(data, data2, "seven");
     assert.equal(result.id, 7);
     assert.equal(result.user.firstname, "Anthony");
+  });
+
+  it("Date type", () => {
+    const wantedResult = new Date("2019-07-30 08:35:00");
+    const data: IData1 = {
+      column: "2019-07-30 08:35:00"
+    };
+
+    AutoMapper.createDefinition<IData1, IData2>("eight").map(
+      p => p.column,
+      p => p.label,
+      {
+        type: AutoMapper.TYPES.DATE
+      }
+    );
+
+    const result: IData2 = AutoMapper.exec(data, "eight");
+    assert.isTrue((result.label as any) instanceof Date);
+    assert.equal(result.label, wantedResult.toString());
   });
 });

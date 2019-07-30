@@ -33,6 +33,8 @@ export const convert = (
       return data.toString();
     case AutoMapper.TYPES.INTEGER:
       return Number(data) || 0;
+    case AutoMapper.TYPES.DATE:
+      return new Date(data);
   }
 };
 

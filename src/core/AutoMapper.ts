@@ -14,7 +14,12 @@ export default class AutoMapper {
     @name AutoMapper#TYPES
     @type object
   */
-  static TYPES = { STRING: "string", INTEGER: "int", FLOAT: "float" };
+  static TYPES = {
+    STRING: "string",
+    INTEGER: "int",
+    FLOAT: "float",
+    DATE: "date"
+  };
 
   /**
     The mappings list created by the method `createDefinition`
