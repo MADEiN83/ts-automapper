@@ -60,7 +60,7 @@ Now:
 
 ```ts
 // index.ts
-import AutoMapper from ".ts-automapper";
+import AutoMapper from "ts-automapper";
 
 AutoMapper.createDefinition<Person, PersonInput>("editPerson")
   .map(src => src.firstname, dst => dst.firstname)
@@ -79,7 +79,7 @@ AutoMapper.createDefinition<Person, PersonInput>("editPerson")
 
 ```ts
 // person.service.ts
-import AutoMapper from ".ts-automapper";
+import AutoMapper from "ts-automapper";
 
 const createPerson = (personInput: PersonInput): Promise<Person> => {
   const person: Person = AutoMapper.exec(person, personInput, "createPerson");

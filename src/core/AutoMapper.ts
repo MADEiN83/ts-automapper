@@ -112,7 +112,7 @@ export default class AutoMapper {
    * Executes a mapping definition with an unique key and assign previously created TDestination object.
    *
    * ```ts
-   * import AutoMapper from ".ts-automapper";
+   * import AutoMapper from "ts-automapper";
    * import { ISource, IDestination } = "../path/of/your/interfaces.ts";
    *
    * let destinationData: IDestination = this.repository.fetch(1); // Real data.
