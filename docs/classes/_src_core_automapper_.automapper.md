@@ -38,7 +38,7 @@ Static class for AutoMapper.
 
 ▪ **mappingsList**: *[IMappings](../interfaces/_src_core_interface_.imappings.md)[]* =  []
 
-*Defined in [src/core/AutoMapper.ts:24](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L24)*
+*Defined in [src/core/AutoMapper.ts:29](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/AutoMapper.ts#L29)*
 
 The mappings list created by the method `createDefinition`
 
@@ -52,12 +52,12 @@ The mappings list created by the method `createDefinition`
 
 ▸ **assign**<**TSource**, **TDestination**>(`source`: `TSource`, `destination`: `TDestination`, `key`: string): *`TDestination`*
 
-*Defined in [src/core/AutoMapper.ts:124](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L124)*
+*Defined in [src/core/AutoMapper.ts:129](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/AutoMapper.ts#L129)*
 
 Executes a mapping definition with an unique key and assign previously created TDestination object.
 
 ```ts
-import AutoMapper from ".ts-automapper";
+import AutoMapper from "ts-automapper";
 import { ISource, IDestination } = "../path/of/your/interfaces.ts";
 
 let destinationData: IDestination = this.repository.fetch(1); // Real data.
@@ -90,7 +90,7 @@ ___
 
 ▸ **createDefinition**<**TSource**, **TDestination**>(`key`: string): *[Mapping](_src_core_mapping_.mapping.md)‹*`TSource`*, *`TDestination`*›*
 
-*Defined in [src/core/AutoMapper.ts:39](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L39)*
+*Defined in [src/core/AutoMapper.ts:44](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/AutoMapper.ts#L44)*
 
 Creates a mapping definition with an unique key.
 
@@ -123,7 +123,7 @@ ___
 
 ▸ **exec**<**TSource**, **TDestination**>(`source`: `TSource`, `key`: string): *`TDestination`*
 
-*Defined in [src/core/AutoMapper.ts:62](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L62)*
+*Defined in [src/core/AutoMapper.ts:67](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/AutoMapper.ts#L67)*
 
 Executes a mapping definition with an unique key.
 
@@ -158,7 +158,7 @@ ___
 
 ▸ **execAll**<**TSource**, **TDestination**>(`list`: `TSource`[], `key`: string): *`TDestination`[]*
 
-*Defined in [src/core/AutoMapper.ts:90](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L90)*
+*Defined in [src/core/AutoMapper.ts:95](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/AutoMapper.ts#L95)*
 
 Executes a mapping definition with an unique key.
 
@@ -193,7 +193,7 @@ ___
 
 ▸ **parseMapping**<**TSource**, **TDestination**>(`source`: `TSource`, `mapping`: [Mapping](_src_core_mapping_.mapping.md)‹*`TSource`*, *`TDestination`*›): *`TDestination`*
 
-*Defined in [src/core/AutoMapper.ts:134](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L134)*
+*Defined in [src/core/AutoMapper.ts:139](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/AutoMapper.ts#L139)*
 
 **Type parameters:**
 
@@ -216,7 +216,7 @@ Name | Type |
 
 ### ▪ **TYPES**: *object*
 
-*Defined in [src/core/AutoMapper.ts:17](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L17)*
+*Defined in [src/core/AutoMapper.ts:17](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/AutoMapper.ts#L17)*
 
 AutoMapper types.
 
@@ -224,20 +224,26 @@ AutoMapper types.
 
 **`type`** object
 
+###  DATE
+
+• **DATE**: *string* = "date"
+
+*Defined in [src/core/AutoMapper.ts:21](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/AutoMapper.ts#L21)*
+
 ###  FLOAT
 
 • **FLOAT**: *string* = "float"
 
-*Defined in [src/core/AutoMapper.ts:17](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L17)*
+*Defined in [src/core/AutoMapper.ts:20](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/AutoMapper.ts#L20)*
 
 ###  INTEGER
 
 • **INTEGER**: *string* = "int"
 
-*Defined in [src/core/AutoMapper.ts:17](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L17)*
+*Defined in [src/core/AutoMapper.ts:19](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/AutoMapper.ts#L19)*
 
 ###  STRING
 
 • **STRING**: *string* = "string"
 
-*Defined in [src/core/AutoMapper.ts:17](https://github.com/MADEiN83/ts-automapper/blob/a5090fa/src/core/AutoMapper.ts#L17)*
+*Defined in [src/core/AutoMapper.ts:18](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/AutoMapper.ts#L18)*
