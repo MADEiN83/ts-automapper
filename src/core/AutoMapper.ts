@@ -150,9 +150,15 @@ export default class AutoMapper {
       const mustContinue = options.condition ? options.condition(source) : true;
 
       if (mustContinue) {
-        let valueToAssign: any = options.operation
-          ? options.operation(sourcePredicate(source))
-          : sourcePredicate(source);
+        let valueToAssign: any = sourcePredicate(source);
+
+        if (options.operation && valueToAssign) {
+          valueToAssign = options.operation(valueToAssign);
+        }
+
+        if (!valueToAssign && options.default != null) {
+          valueToAssign = options.default;
+        }
 
         // Type conversion.
         valueToAssign = convert(valueToAssign, options.type);

@@ -14,4 +14,6 @@ export interface IMappingOptions<TSource> {
   operation?: (data: any) => any;
   /** Perform a conditional operation and stop process if returns false. */
   condition?: (data: TSource) => boolean | undefined;
+  /** Default value if no value was provided */
+  default?: any;
 }

@@ -25,7 +25,7 @@ export const convert = (
   data: any = null,
   type: string | null = AutoMapper.TYPES.STRING
 ): any => {
-  if (!data) return null;
+  if (data == null) return null;
 
   switch (type) {
     default:
