@@ -148,4 +148,23 @@ describe("AutoMapper Tests", () => {
     assert.isTrue((result.label as any) instanceof Date);
     assert.equal(result.label, wantedResult.toString());
   });
+
+  it("Default value for mapping", () => {
+    const wantedResult = "Test default value";
+    const data: IData1 = {
+      column: "2019-07-30 08:35:00",
+      nested: undefined
+    };
+
+    AutoMapper.createDefinition<IData1, IData2>("nine").map(
+      p => p.nested,
+      p => p.label,
+      {
+        default: wantedResult
+      }
+    );
+
+    const result: IData2 = AutoMapper.exec(data, "nine");
+    assert.equal(result.label, wantedResult);
+  });
 });
