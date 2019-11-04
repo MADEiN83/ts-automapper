@@ -21,7 +21,7 @@
 
 • **key**: *string*
 
-*Defined in [src/core/interface.ts:5](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/interface.ts#L5)*
+*Defined in [src/core/interface.ts:5](https://github.com/MADEiN83/ts-automapper/blob/51e2a1d/src/core/interface.ts#L5)*
 
 Unique key for the mapping definition.
 
@@ -31,6 +31,6 @@ ___
 
 • **mapping**: *[Mapping](../classes/_src_core_mapping_.mapping.md)‹*any*, *any*›*
 
-*Defined in [src/core/interface.ts:7](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/interface.ts#L7)*
+*Defined in [src/core/interface.ts:7](https://github.com/MADEiN83/ts-automapper/blob/51e2a1d/src/core/interface.ts#L7)*
 
 The mapping definition.

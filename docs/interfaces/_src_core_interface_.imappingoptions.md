@@ -27,7 +27,7 @@
 
 • **condition**? : *undefined | function*
 
-*Defined in [src/core/interface.ts:16](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/interface.ts#L16)*
+*Defined in [src/core/interface.ts:16](https://github.com/MADEiN83/ts-automapper/blob/51e2a1d/src/core/interface.ts#L16)*
 
 Perform a conditional operation and stop process if returns false.
 
@@ -37,7 +37,7 @@ ___
 
 • **default**? : *any*
 
-*Defined in [src/core/interface.ts:18](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/interface.ts#L18)*
+*Defined in [src/core/interface.ts:18](https://github.com/MADEiN83/ts-automapper/blob/51e2a1d/src/core/interface.ts#L18)*
 
 Default value if no value was provided
 
@@ -47,7 +47,7 @@ ___
 
 • **operation**? : *undefined | function*
 
-*Defined in [src/core/interface.ts:14](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/interface.ts#L14)*
+*Defined in [src/core/interface.ts:14](https://github.com/MADEiN83/ts-automapper/blob/51e2a1d/src/core/interface.ts#L14)*
 
 Perform an operation on property.
 
@@ -57,6 +57,6 @@ ___
 
 • **type**? : *undefined | string*
 
-*Defined in [src/core/interface.ts:12](https://github.com/MADEiN83/ts-automapper/blob/08fcd5c/src/core/interface.ts#L12)*
+*Defined in [src/core/interface.ts:12](https://github.com/MADEiN83/ts-automapper/blob/51e2a1d/src/core/interface.ts#L12)*
 
 Property type
