@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es2017", "es2015", "dom", "es6"],
+    "module": "commonjs",
+    "baseUrl": "src",
+    "sourceMap": true,
+    "strict": true,
+    "types": ["node"],
+    "declaration": true
+  },
+  "include": ["./src/**.ts"],
+  "exclude": ["node_modules"]
+}
