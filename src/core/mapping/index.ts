@@ -1,5 +1,5 @@
 import MappingExecutor from "../mappingExecutor";
-import { IPredicate, IMappingOptions } from "../interfaces";
+import { IPredicate, AutoMapperOptions } from "../interfaces";
 
 class Mapping<TSource, TDestination> {
   readonly predicates: IPredicate<TSource, TDestination>[] = [];
@@ -14,7 +14,7 @@ class Mapping<TSource, TDestination> {
   map = (
     sourcePredicate: (obj: TSource) => any,
     destinationPredicate: (obj: TDestination) => any,
-    options: IMappingOptions = {}
+    options: AutoMapperOptions = {}
   ) => {
     this.predicates.push({ sourcePredicate, destinationPredicate, options });
     return this;

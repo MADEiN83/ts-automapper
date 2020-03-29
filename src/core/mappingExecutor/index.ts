@@ -1,4 +1,4 @@
-import { getKeysFromPredicate, setDeepValue, getDeepValue } from "../utils";
+import { getKeysFromPredicate, setDeepValue } from "../../utils";
 import { IPredicate, AutoMapperTypes } from "../interfaces";
 
 class MappingExecutor<TSource, TDestination> {
@@ -40,12 +40,6 @@ class MappingExecutor<TSource, TDestination> {
     sourcePredicate: (obj: TSource) => any,
     type: AutoMapperTypes
   ) => {
-    // const sourceKeys = getKeysFromPredicate(sourcePredicate);
-    // console.log(
-    //   "sourcePredicate",
-    //   sourceKeys,
-    //   getDeepValue(source, sourceKeys.join("."))
-    // );
     const [value] = [source].map(sourcePredicate);
     return this.castValue(value, type);
   };

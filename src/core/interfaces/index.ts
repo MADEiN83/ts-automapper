@@ -1,10 +1,10 @@
 export interface IPredicate<TSource, TDestination> {
   sourcePredicate: (obj: TSource) => any;
   destinationPredicate: (obj: TDestination) => any;
-  options: IMappingOptions;
+  options: AutoMapperOptions;
 }
 
-export interface IMappingOptions {
+export interface AutoMapperOptions {
   type?: AutoMapperTypes;
   operation?: (value: any) => any;
 }
