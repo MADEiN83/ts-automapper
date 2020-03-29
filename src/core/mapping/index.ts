@@ -15,7 +15,7 @@ class Mapping<TSource, TDestination> {
     sourcePredicate: (obj: TSource) => any,
     destinationPredicate: (obj: TDestination) => any,
     options: AutoMapperOptions = {}
-  ) => {
+  ): Mapping<TSource, TDestination> => {
     this.predicates.push({ sourcePredicate, destinationPredicate, options });
     return this;
   };
