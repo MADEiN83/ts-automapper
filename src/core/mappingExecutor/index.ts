@@ -44,7 +44,11 @@ class MappingExecutor<TSource, TDestination> {
     return this.castValue(value, type);
   };
 
-  private castValue = (value: any, type?: AutoMapperTypes) => {
+  private castValue = (value: any, type?: AutoMapperTypes): any => {
+    if (!value) {
+      return value;
+    }
+
     switch (type) {
       case "string":
         return value.toString();
