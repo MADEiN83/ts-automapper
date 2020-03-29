@@ -1,9 +1,6 @@
 node_modules
 
-dist/src
-dist/*.d.ts
-dist/*.js
-dist/*.md
+dist
 
 private
 .git
