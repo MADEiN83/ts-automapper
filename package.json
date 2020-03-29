@@ -2,14 +2,12 @@
   "name": "ts-automapper",
   "version": "1.0.15",
   "description": "Magic library for node to be able to transform object to another object",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "start": "nodemon",
     "build": "tsc && npm run doc",
-    "test": "mocha -r ts-node/register tests/**/*.test.ts",
-    "doc": "rm -rf docs && typedoc --theme markdown --platform github && rm docs/README.md && mv docs/globals.md docs/README.md && npm run && cp README.md dist/README.md",
-    "predeploy": "npm run build",
-    "deploy": "cd dist/ && npm publish"
+    "test": "jest",
+    "doc": "rm -rf docs && typedoc --theme markdown --platform github && rm docs/README.md && mv docs/globals.md docs/README.md && npm run && cp README.md dist/README.md"
   },
   "author": "Anthony DI STEFANO",
   "homepage": "https://github.com/MADEiN83/ts-automapper",
@@ -29,18 +27,28 @@
     "javascript"
   ],
   "types": "dist/index.d.ts",
+  "type": "module",
   "dependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^6.2.0",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.5",
     "nodemon": "^1.19.1",
     "typescript": "^3.5.3"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.7",
-    "assert": "^2.0.0",
-    "ts-node": "^8.4.1",
+    "jest": "^25.2.3",
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.8.1",
     "typedoc": "^0.15.0",
     "typedoc-plugin-markdown": "^2.1.0"
+  },
+  "jest": {
+    "transform": {
+      ".*": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    }
   }
 }

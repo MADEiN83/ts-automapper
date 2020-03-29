@@ -4,12 +4,12 @@
     "lib": ["es2017", "es2015", "dom", "es6"],
     "module": "commonjs",
     "outDir": "./dist/",
-    "sourceMap": false,
+    "baseUrl": "src",
+    "sourceMap": true,
     "strict": true,
-    "types": ["mocha", "chai"],
-    "typeRoots": ["typings"],
+    "types": ["node", "jest"],
     "declaration": true
   },
-  "include": ["./src/**.ts", "index.ts"],
+  "include": ["./src/**.ts"],
   "exclude": ["node_modules", "firefunctions"]
 }
