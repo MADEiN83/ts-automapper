@@ -1,7 +1,25 @@
 import Mapping from "../mapping";
 
+/**
+  AutoMapper static class to be able to create mapping definitions.
+  @class AutoMapper
+*/
 class AutoMapper {
   static mappings: Mapping<any, any>[] = [];
+
+  /**
+   * Creates a mapping definition with an unique key.
+   *
+   * ```ts
+   * import AutoMapper from "ts-automapper";
+   * import { ISource, IDestination } = "../path/of/your/interfaces.ts";
+   *
+   * AutoMapper.createDefinition<ISource, IDestination>('UNIQUE_KEY');
+   * ```
+   *
+   * @param {string} key The unique key to be able to retrieve the mapping.
+   * @return {Mapping<TSource, TDestination>} Returns the mapping class.
+   */
 
   static create = <TSource, TDestination>(
     key: string

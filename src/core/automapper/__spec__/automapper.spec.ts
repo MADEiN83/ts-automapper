@@ -1,4 +1,4 @@
-import AutoMapper from ".";
+import AutoMapper from "..";
 
 interface Input {
   first_name?: string;
