@@ -32,7 +32,7 @@ AutoMapper static class to be able to create mapping definitions.
 
 ▪ **mappings**: *[Mapping](_core_mapping_index_.mapping.md)‹*any*, *any*›[]* =  []
 
-*Defined in [core/automapper/index.ts:8](https://github.com/MADEiN83/ts-automapper/blob/d5cc5b5/src/core/automapper/index.ts#L8)*
+*Defined in [core/automapper/index.ts:8](https://github.com/MADEiN83/ts-automapper/blob/b125bc0/src/core/automapper/index.ts#L8)*
 
 ## Methods
 
@@ -40,7 +40,7 @@ AutoMapper static class to be able to create mapping definitions.
 
 ▸ **assign**<**TSource**, **TDestination**>(`key`: string, `source`: `TSource`, `destination`: `TDestination`): *void*
 
-*Defined in [core/automapper/index.ts:43](https://github.com/MADEiN83/ts-automapper/blob/d5cc5b5/src/core/automapper/index.ts#L43)*
+*Defined in [core/automapper/index.ts:43](https://github.com/MADEiN83/ts-automapper/blob/b125bc0/src/core/automapper/index.ts#L43)*
 
 **Type parameters:**
 
@@ -64,7 +64,7 @@ ___
 
 ▸ **create**<**TSource**, **TDestination**>(`key`: string): *[Mapping](_core_mapping_index_.mapping.md)‹*`TSource`*, *`TDestination`*›*
 
-*Defined in [core/automapper/index.ts:24](https://github.com/MADEiN83/ts-automapper/blob/d5cc5b5/src/core/automapper/index.ts#L24)*
+*Defined in [core/automapper/index.ts:24](https://github.com/MADEiN83/ts-automapper/blob/b125bc0/src/core/automapper/index.ts#L24)*
 
 Creates a mapping definition with an unique key.
 
@@ -97,7 +97,7 @@ ___
 
 ▸ **createMappingInstance**(`key`: string): *[Mapping](_core_mapping_index_.mapping.md)‹*any*, *any*›*
 
-*Defined in [core/automapper/index.ts:56](https://github.com/MADEiN83/ts-automapper/blob/d5cc5b5/src/core/automapper/index.ts#L56)*
+*Defined in [core/automapper/index.ts:56](https://github.com/MADEiN83/ts-automapper/blob/b125bc0/src/core/automapper/index.ts#L56)*
 
 **Parameters:**
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **exec**<**TSource**, **TDestination**>(`key`: string, `source`: `TSource`): *`TDestination`*
 
-*Defined in [core/automapper/index.ts:30](https://github.com/MADEiN83/ts-automapper/blob/d5cc5b5/src/core/automapper/index.ts#L30)*
+*Defined in [core/automapper/index.ts:30](https://github.com/MADEiN83/ts-automapper/blob/b125bc0/src/core/automapper/index.ts#L30)*
 
 **Type parameters:**
 
@@ -136,6 +136,6 @@ ___
 
 ▸ **reset**(): *void*
 
-*Defined in [core/automapper/index.ts:49](https://github.com/MADEiN83/ts-automapper/blob/d5cc5b5/src/core/automapper/index.ts#L49)*
+*Defined in [core/automapper/index.ts:49](https://github.com/MADEiN83/ts-automapper/blob/b125bc0/src/core/automapper/index.ts#L49)*
 
 **Returns:** *void*

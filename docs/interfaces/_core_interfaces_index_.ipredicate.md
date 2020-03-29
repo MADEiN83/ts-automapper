@@ -28,7 +28,7 @@
 
 • **destinationPredicate**: *function*
 
-*Defined in [core/interfaces/index.ts:3](https://github.com/MADEiN83/ts-automapper/blob/d5cc5b5/src/core/interfaces/index.ts#L3)*
+*Defined in [core/interfaces/index.ts:3](https://github.com/MADEiN83/ts-automapper/blob/b125bc0/src/core/interfaces/index.ts#L3)*
 
 #### Type declaration:
 
@@ -46,7 +46,7 @@ ___
 
 • **options**: *[AutoMapperOptions](_core_interfaces_index_.automapperoptions.md)*
 
-*Defined in [core/interfaces/index.ts:4](https://github.com/MADEiN83/ts-automapper/blob/d5cc5b5/src/core/interfaces/index.ts#L4)*
+*Defined in [core/interfaces/index.ts:4](https://github.com/MADEiN83/ts-automapper/blob/b125bc0/src/core/interfaces/index.ts#L4)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **sourcePredicate**: *function*
 
-*Defined in [core/interfaces/index.ts:2](https://github.com/MADEiN83/ts-automapper/blob/d5cc5b5/src/core/interfaces/index.ts#L2)*
+*Defined in [core/interfaces/index.ts:2](https://github.com/MADEiN83/ts-automapper/blob/b125bc0/src/core/interfaces/index.ts#L2)*
 
 #### Type declaration:
 
