@@ -1,108 +1,83 @@
 import AutoMapper from "ts-automapper";
-
-/*
- * Create dummy interfaces.
- */
-
-interface IPersonInput {
-  first_name: string;
-  last_name: string;
-  age: string;
-  address: string;
-  postal: string;
-  town: string;
-  countryName: string;
-  phone: string;
-  emailAddress: string;
-}
-
-interface IPerson {
-  identity: {
-    firstName: string;
-    lastName: string;
-    age: number;
-  };
-  contact: {
-    address: string;
-    postalCode: string;
-    town: string;
-    country: {
-      name: string;
-    };
-    phone: string;
-    email: string;
-  };
-}
+import { IPersonInput, IPerson } from "./interface";
 
 /*
  * Configure AutoMapper's mapping.
  */
 AutoMapper.create<IPersonInput, IPerson>("personInput_person")
   .map(
-    input => input.first_name,
-    output => output.identity.firstName,
+    (input) => input.first_name,
+    (output) => output.identity.firstName,
     {
-      operation: p => p.trim()
+      operation: (p) => p.trim(),
     }
   )
   .map(
-    input => input.last_name,
-    output => output.identity.lastName,
+    (input) => input.last_name,
+    (output) => output.identity.lastName,
     {
-      operation: p => p.trim()
+      operation: (p) => p.trim(),
     }
   )
   .map(
-    input => input.age,
-    output => output.identity.age,
+    (input) => input.age,
+    (output) => output.identity.age,
     {
-      type: "number"
+      type: "number",
     }
   )
   .map(
-    input => input.address,
-    output => output.contact.address
+    (input) => input.address,
+    (output) => output.contact.address
   )
   .map(
-    input => input.postal,
-    output => output.contact.postalCode,
+    (input) => input.postal,
+    (output) => output.contact.postalCode,
     {
-      operation: p => p.substr(0, 5)
+      operation: (p) => p.substr(0, 5),
     }
   )
   .map(
-    input => input.town,
-    output => output.contact.town
+    (input) => input.town,
+    (output) => output.contact.town
   )
   .map(
-    input => input.countryName,
-    output => output.contact.country.name
+    (input) => input.countryName,
+    (output) => output.contact.country.name
   )
   .map(
-    input => input.phone,
-    output => output.contact.phone,
+    (input) => input.phone,
+    (output) => output.contact.phone,
     {
-      operation: p => p.substr(0, 10)
+      operation: (p) => p.substr(0, 10),
     }
   )
   .map(
-    input => input.emailAddress,
-    output => output.contact.email
+    (input) => input.emailAddress,
+    (output) => output.contact.email
+  )
+  .map(
+    (input) => input.date,
+    (output) => output.updatedAt,
+    {
+      type: "date",
+    }
   );
 
 /*
  * Run mapping.
  */
-const uglyData = {
+const uglyData: IPersonInput = {
   first_name: "     Anthony",
   last_name: "MADEiN83  ",
-  age: "28",
+  age: "29",
   address: "Somewhere",
   postal: "068006793583750305839",
   town: "Cagnes-sur-Mer",
   countryName: "France",
   phone: "123456789012345678901234567890",
-  emailAddress: "contact@me.io"
+  emailAddress: "contact@me.io",
+  date: "Sat Jul 24 2021 11:18:47 GMT+0200",
 };
 
 const awesomeData = AutoMapper.exec<IPersonInput, IPerson>(
