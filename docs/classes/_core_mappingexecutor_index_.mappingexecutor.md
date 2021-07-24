@@ -30,7 +30,7 @@
 
 ▸ **buildDestinationObject**(`source`: `TSource`, `predicates`: [IPredicate](../interfaces/_core_interfaces_index_.ipredicate.md)‹*`TSource`*, *`TDestination`*›[]): *`TDestination`*
 
-*Defined in [core/mappingExecutor/index.ts:5](https://github.com/MADEiN83/ts-automapper/blob/b125bc0/src/core/mappingExecutor/index.ts#L5)*
+*Defined in [core/mappingExecutor/index.ts:5](https://github.com/MADEiN83/ts-automapper/blob/9b3dbd7/src/core/mappingExecutor/index.ts#L5)*
 
 **Parameters:**
 
@@ -47,7 +47,7 @@ ___
 
 ▸ **castValue**(`value`: any, `type?`: [AutoMapperTypes](../modules/_core_interfaces_index_.md#automappertypes)): *any*
 
-*Defined in [core/mappingExecutor/index.ts:47](https://github.com/MADEiN83/ts-automapper/blob/b125bc0/src/core/mappingExecutor/index.ts#L47)*
+*Defined in [core/mappingExecutor/index.ts:47](https://github.com/MADEiN83/ts-automapper/blob/9b3dbd7/src/core/mappingExecutor/index.ts#L47)*
 
 **Parameters:**
 
@@ -64,7 +64,7 @@ ___
 
 ▸ **execOperation**(`value`: any, `operation`: function): *any*
 
-*Defined in [core/mappingExecutor/index.ts:62](https://github.com/MADEiN83/ts-automapper/blob/b125bc0/src/core/mappingExecutor/index.ts#L62)*
+*Defined in [core/mappingExecutor/index.ts:62](https://github.com/MADEiN83/ts-automapper/blob/9b3dbd7/src/core/mappingExecutor/index.ts#L62)*
 
 **Parameters:**
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **getValueByPredicate**(`source`: `TSource`, `sourcePredicate`: function, `type`: [AutoMapperTypes](../modules/_core_interfaces_index_.md#automappertypes)): *any*
 
-*Defined in [core/mappingExecutor/index.ts:38](https://github.com/MADEiN83/ts-automapper/blob/b125bc0/src/core/mappingExecutor/index.ts#L38)*
+*Defined in [core/mappingExecutor/index.ts:38](https://github.com/MADEiN83/ts-automapper/blob/9b3dbd7/src/core/mappingExecutor/index.ts#L38)*
 
 **Parameters:**
 
@@ -114,7 +114,7 @@ ___
 
 ▸ **setDeepValueByPredicate**(`output`: any, `predicate`: any, `value`: any): *void*
 
-*Defined in [core/mappingExecutor/index.ts:29](https://github.com/MADEiN83/ts-automapper/blob/b125bc0/src/core/mappingExecutor/index.ts#L29)*
+*Defined in [core/mappingExecutor/index.ts:29](https://github.com/MADEiN83/ts-automapper/blob/9b3dbd7/src/core/mappingExecutor/index.ts#L29)*
 
 **Parameters:**
 
