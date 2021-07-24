@@ -7,7 +7,8 @@
     "build": "tsc && npm run doc",
     "test": "jest",
     "doc": "rm -rf docs && typedoc --theme markdown --platform github && rm docs/README.md && mv docs/globals.md docs/README.md && npm run && cp README.md dist/README.md",
-    "coverage": "node src/index.ts --coverage --silent"
+    "coverage": "node src/index.ts --coverage --silent",
+    "snyk": "snyk monitor"
   },
   "author": "Anthony DI STEFANO",
   "homepage": "https://github.com/MADEiN83/ts-automapper",
@@ -34,6 +35,7 @@
   "devDependencies": {
     "@types/jest": "^25.1.4",
     "jest": "^25.2.3",
+    "snyk": "^1.666.0",
     "ts-jest": "^25.2.1",
     "ts-node": "^8.8.1",
     "typedoc": "^0.15.0",
