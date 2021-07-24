@@ -21,7 +21,7 @@
 
 • **operation**? : *undefined | function*
 
-*Defined in [core/interfaces/index.ts:9](https://github.com/MADEiN83/ts-automapper/blob/9b3dbd7/src/core/interfaces/index.ts#L9)*
+*Defined in [core/interfaces/index.ts:9](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/interfaces/index.ts#L9)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **type**? : *[AutoMapperTypes](../modules/_core_interfaces_index_.md#automappertypes)*
 
-*Defined in [core/interfaces/index.ts:8](https://github.com/MADEiN83/ts-automapper/blob/9b3dbd7/src/core/interfaces/index.ts#L8)*
+*Defined in [core/interfaces/index.ts:8](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/interfaces/index.ts#L8)*

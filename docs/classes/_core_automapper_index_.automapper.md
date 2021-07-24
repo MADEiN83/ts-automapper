@@ -27,7 +27,7 @@
 
 ▪ **mappings**: *[Mapping](_core_mapping_index_.mapping.md)‹*any*, *any*›[]* =  []
 
-*Defined in [core/automapper/index.ts:8](https://github.com/MADEiN83/ts-automapper/blob/9b3dbd7/src/core/automapper/index.ts#L8)*
+*Defined in [core/automapper/index.ts:8](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/automapper/index.ts#L8)*
 
 ## Methods
 
@@ -35,7 +35,7 @@
 
 ▸ **create**<**TSource**, **TDestination**>(`key`: string): *[Mapping](_core_mapping_index_.mapping.md)‹*`TSource`*, *`TDestination`*›*
 
-*Defined in [core/automapper/index.ts:24](https://github.com/MADEiN83/ts-automapper/blob/9b3dbd7/src/core/automapper/index.ts#L24)*
+*Defined in [core/automapper/index.ts:24](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/automapper/index.ts#L24)*
 
 **Type parameters:**
 
@@ -59,7 +59,7 @@ ___
 
 ▸ **createMappingInstance**(`key`: string): *[Mapping](_core_mapping_index_.mapping.md)‹*any*, *any*›*
 
-*Defined in [core/automapper/index.ts:50](https://github.com/MADEiN83/ts-automapper/blob/9b3dbd7/src/core/automapper/index.ts#L50)*
+*Defined in [core/automapper/index.ts:50](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/automapper/index.ts#L50)*
 
 **Parameters:**
 
@@ -75,7 +75,7 @@ ___
 
 ▸ **exec**<**TSource**, **TDestination**>(`key`: string, `source`: `TSource`): *`TDestination`*
 
-*Defined in [core/automapper/index.ts:30](https://github.com/MADEiN83/ts-automapper/blob/9b3dbd7/src/core/automapper/index.ts#L30)*
+*Defined in [core/automapper/index.ts:30](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/automapper/index.ts#L30)*
 
 **Type parameters:**
 
@@ -98,6 +98,6 @@ ___
 
 ▸ **reset**(): *void*
 
-*Defined in [core/automapper/index.ts:43](https://github.com/MADEiN83/ts-automapper/blob/9b3dbd7/src/core/automapper/index.ts#L43)*
+*Defined in [core/automapper/index.ts:43](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/automapper/index.ts#L43)*
 
 **Returns:** *void*

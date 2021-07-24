@@ -1,10 +1,12 @@
 {
   "name": "ts-automapper",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Magic library for node to be able to transform object to another object",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc && npm run doc",
+    "prebuild": "rm -rf dist docs",
+    "build": "tsc",
+    "postbuild": "npm run doc",
     "test": "jest",
     "doc": "rm -rf docs && typedoc --theme markdown --platform github && rm docs/README.md && mv docs/globals.md docs/README.md && npm run && cp README.md dist/README.md",
     "coverage": "node src/index.ts --coverage --silent"

@@ -18,7 +18,7 @@
 
 ▸ **getDeepValue**(`obj`: any, `path`: string): *any*
 
-*Defined in [utils/index.ts:43](https://github.com/MADEiN83/ts-automapper/blob/9b3dbd7/src/utils/index.ts#L43)*
+*Defined in [utils/index.ts:43](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/utils/index.ts#L43)*
 
 **Parameters:**
 
@@ -35,7 +35,7 @@ ___
 
 ▸ **getKeysFromPredicate**(`predicate`: function): *string[]*
 
-*Defined in [utils/index.ts:1](https://github.com/MADEiN83/ts-automapper/blob/9b3dbd7/src/utils/index.ts#L1)*
+*Defined in [utils/index.ts:1](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/utils/index.ts#L1)*
 
 **Parameters:**
 
@@ -57,7 +57,7 @@ ___
 
 ▸ **setDeepValue**(`obj`: any, `path`: string, `value`: any): *void*
 
-*Defined in [utils/index.ts:25](https://github.com/MADEiN83/ts-automapper/blob/9b3dbd7/src/utils/index.ts#L25)*
+*Defined in [utils/index.ts:25](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/utils/index.ts#L25)*
 
 **Parameters:**
 
