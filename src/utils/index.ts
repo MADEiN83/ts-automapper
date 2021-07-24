@@ -1,56 +1,60 @@
 export const getKeysFromPredicate = (
   predicate: (object: any) => any
 ): string[] => {
-  if (!predicate) return [];
+  if (!predicate) {
+    return [];
+  }
 
   const regex = /(\.\w+)/g;
   const keys = [];
-  let m;
+  let stringsArray: RegExpExecArray | null;
 
-  while ((m = regex.exec(predicate.toString())) !== null) {
+  while ((stringsArray = regex.exec(predicate.toString())) !== null) {
     // This is necessary to avoid infinite loops with zero-width matches
-    if (m.index === regex.lastIndex) {
+    if (stringsArray.index === regex.lastIndex) {
       regex.lastIndex++;
     }
 
-    keys.push(m[0].replace(".", ""));
+    const key = stringsArray[0].replace(".", "");
+    keys.push(key);
   }
 
   return keys;
 };
 
 export const setDeepValue = (obj: any, path: string, value: any): void => {
-  var keys = path.split(".");
-  var tempObject = obj;
+  const keys = path.split(".");
+  let tempObject = obj;
+
   while (keys.length - 1) {
-    const aKey = keys.shift();
-    if (!aKey) {
-      break;
+    const aKey = keys.shift() as string;
+    const keyExists = aKey in tempObject;
+
+    if (!keyExists) {
+      tempObject[aKey] = {};
     }
 
-    if (!(aKey in tempObject)) tempObject[aKey] = {};
     tempObject = tempObject[aKey];
   }
+
   tempObject[keys[0]] = value;
 };
 
 export const getDeepValue = (obj: any, path: string): any => {
-  path = path.replace(/\[(\w+)\]/g, ".$1");
-  path = path.replace(/^\./, "");
+  path = path.replace(/\[(\w+)\]/g, ".$1").replace(/^\./, "");
   const keys = path.split(".");
-  var tempObject = obj;
+  let tempObject = obj;
 
   while (keys.length) {
-    const aKey = keys.shift();
-    if (!aKey) {
-      break;
-    }
+    const aKey = keys.shift() as string;
+    const keyExists = aKey in tempObject;
 
-    if (!(aKey in tempObject)) {
+    if (!keyExists) {
       return;
     }
 
     tempObject = tempObject[aKey];
   }
+
   return tempObject;
 };

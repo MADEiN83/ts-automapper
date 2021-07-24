@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc && npm run doc",
     "test": "jest",
-    "doc": "rm -rf docs && typedoc --theme markdown --platform github && rm docs/README.md && mv docs/globals.md docs/README.md && npm run && cp README.md dist/README.md"
+    "doc": "rm -rf docs && typedoc --theme markdown --platform github && rm docs/README.md && mv docs/globals.md docs/README.md && npm run && cp README.md dist/README.md",
+    "coverage": "node src/index.ts --coverage --silent"
   },
   "author": "Anthony DI STEFANO",
   "homepage": "https://github.com/MADEiN83/ts-automapper",

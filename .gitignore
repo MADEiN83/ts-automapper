@@ -6,3 +6,4 @@ private
 .git
 .env
 deploy.sh
+coverage

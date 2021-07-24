@@ -27,10 +27,6 @@ class Mapping<TSource, TDestination> {
     );
     return output;
   };
-
-  assign = (source: TSource, destination: TDestination) => {
-    return { oui: "non" };
-  };
 }
 
 export default Mapping;

@@ -11,7 +11,16 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
+  code-coverage:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npx jest --collect-coverage
 workflows:
   build-and-test:
     jobs:
       - build-and-test
+      - code-coverage
