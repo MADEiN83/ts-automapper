@@ -31,20 +31,14 @@ class AutoMapper {
     key: string,
     source: TSource
   ): TDestination => {
-    const currentMapping = AutoMapper.mappings.find(p => p.key === key);
+    const currentMapping = AutoMapper.mappings.find((p) => p.key === key);
     if (!currentMapping) {
       // No mapping found.
-      throw new Error("Not found");
+      throw new Error(`Mapping configuration was not found for '${key}'`);
     }
 
     return currentMapping.exec(source);
   };
-
-  static assign = <TSource, TDestination>(
-    key: string,
-    source: TSource,
-    destination: TDestination
-  ) => {};
 
   static reset = () => {
     AutoMapper.mappings = [];

@@ -9,4 +9,4 @@ export interface AutoMapperOptions {
   operation?: (value: any) => any;
 }
 
-export type AutoMapperTypes = "string" | "number";
+export type AutoMapperTypes = "string" | "number" | "date";

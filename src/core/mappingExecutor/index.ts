@@ -8,11 +8,11 @@ class MappingExecutor<TSource, TDestination> {
   ): TDestination => {
     const output = {};
 
-    predicates.forEach(aPredicate => {
+    predicates.forEach((aPredicate) => {
       const {
         sourcePredicate,
         destinationPredicate,
-        options: { type = "string", operation = (value: any) => value }
+        options: { type = "string", operation = (value: any) => value },
       } = aPredicate;
       const valueRaw = this.getValueByPredicate(source, sourcePredicate, type);
       const value = this.execOperation(valueRaw, operation);
@@ -46,7 +46,7 @@ class MappingExecutor<TSource, TDestination> {
 
   private castValue = (value: any, type?: AutoMapperTypes): any => {
     if (!value) {
-      return value;
+      return;
     }
 
     switch (type) {
@@ -54,8 +54,8 @@ class MappingExecutor<TSource, TDestination> {
         return value.toString();
       case "number":
         return Number(value);
-      default:
-        return value;
+      case "date":
+        return new Date(value);
     }
   };
 
