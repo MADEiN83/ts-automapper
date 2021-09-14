@@ -62,7 +62,7 @@ Now:
 // index.ts
 import AutoMapper from "ts-automapper";
 
-AutoMapper.createDefinition<Person, PersonInput>("editPerson")
+AutoMapper.create<Person, PersonInput>("editPerson")
   .map(src => src.firstname, dst => dst.firstname)
   .map(src => src.lastname, dst => dst.lastname)
   .map(src => src.email, dst => dst.email)
@@ -84,13 +84,6 @@ import AutoMapper from "ts-automapper";
 const createPerson = (personInput: PersonInput): Promise<Person> => {
   const person: Person = AutoMapper.exec(person, personInput, "createPerson");
   return await this.repository.save(person);
-};
-
-const editPerson = (personInput: PersonInput): Promise<Person> => {
-  const person: Person = await this.repository.find(personInput.id);
-  const toSave: Person = AutoMapper.assign(person, personInput, "editPerson");
-
-  return await this.repository.save(toSave);
 };
 ```
 
