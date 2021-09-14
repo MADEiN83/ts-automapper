@@ -13,13 +13,14 @@ describe("Utils tests", () => {
     expect(output).toEqual([]);
   });
 
-  it("[setDeepValue] should set lastName = 'YEP' when setDeepValue will be called", () => {
+  it("[setDeepValue] should set lastName when setDeepValue is called", () => {
     const object: any = {
-      person: { firstName: "Nope" },
+      person: { firstName: "First name goes here" },
     };
 
-    setDeepValue(object, "person.lastName", "YEP");
-    expect(object.person.lastName).toBe("YEP");
+    setDeepValue(object, "person.lastName", "Last name goes here");
+    expect(object.person.firstName).toBe("First name goes here");
+    expect(object.person.lastName).toBe("Last name goes here");
   });
 
   it("[getDeepValue] should return 'Nope' when path is good", () => {
@@ -27,14 +28,14 @@ describe("Utils tests", () => {
       person: {
         very: {
           deep: {
-            value: { firstName: "Nope" },
+            value: { firstName: "First name goes here" },
           },
         },
       },
     };
 
     const value = getDeepValue(object, "person.very.deep.value.firstName");
-    expect(value).toBe("Nope");
+    expect(value).toBe("First name goes here");
   });
 
   it("[getDeepValue] should return undefined when property is wrong", () => {
@@ -42,7 +43,7 @@ describe("Utils tests", () => {
       person: {
         very: {
           deep: {
-            value: { firstName: "Nope" },
+            value: { firstName: "First name goes here" },
           },
         },
       },
