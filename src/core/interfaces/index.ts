@@ -1,4 +1,4 @@
-export interface IPredicate<TSource, TDestination> {
+export interface Predicate<TSource, TDestination> {
   sourcePredicate: (obj: TSource) => any;
   destinationPredicate: (obj: TDestination) => any;
   options: AutoMapperOptions;
