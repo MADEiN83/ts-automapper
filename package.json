@@ -30,7 +30,7 @@
   ],
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@types/node": "^13.13.52",
+    "@types/node": "^13.9.5",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
