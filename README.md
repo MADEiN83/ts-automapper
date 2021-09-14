@@ -73,7 +73,11 @@ AutoMapper.create<Person, PersonInput>("editPerson")
     operation: p => p.split("_")[0]
   })
   .map(src => src.address03, dst => dst.city, {
-    operation: p => p.split("_")[1]
+    operation: p => p.split("_")[1],
+    conditions: {
+      // this field mapping will only work if the `age` property is `not empty`.
+      notEmpty: [(src: Input) => src.age],
+    }
   });
 ```
 
@@ -94,8 +98,8 @@ const createPerson = (personInput: PersonInput): Promise<Person> => {
 - [x] Nested mapping (source side)
 - [x] Nested mapping (destination side)
 - [x] Assign existing object
-- [ ] More operations
-  - [ ] Conditionnal mapping of property (eg.: exists, contains, equals, ...)
+- [x] More operations
+  - [x] Conditionnal mapping of property (eg.: exists, contains, equals, ...)
   - [ ] Condition based on other property
 - Better unique key management (I want to remove `key` arg from methods)
 - ...

@@ -169,4 +169,45 @@ describe("AutoMapper tests", () => {
     expect(AutoMapper.mappings).toBeDefined();
     expect(AutoMapper.mappings).toHaveLength(0);
   });
+
+  it("should map if `age` property is empty", () => {
+    AutoMapper.create<Input, Output>("key").map(
+      (p) => p.first_name,
+      (p) => p.firstName,
+      {
+        conditions: {
+          empty: [(src: Input) => src.age],
+        },
+      }
+    );
+
+    const output = AutoMapper.exec<Input, Output>("key", {
+      first_name: "Anthony",
+    });
+
+    expect(output).toEqual({
+      firstName: "Anthony",
+    });
+  });
+
+  it("should not map if `age` property is fulfilled", () => {
+    AutoMapper.create<Input, Output>("key").map(
+      (p) => p.first_name,
+      (p) => p.firstName,
+      {
+        conditions: {
+          empty: [(src: Input) => src.age],
+        },
+      }
+    );
+
+    const output = AutoMapper.exec<Input, Output>("key", {
+      first_name: "Anthony",
+      age: "29",
+    });
+
+    expect(output).toEqual({
+      firstName: undefined,
+    });
+  });
 });

@@ -9,7 +9,8 @@
 ### Interfaces
 
 * [AutoMapperOptions](../interfaces/_core_interfaces_index_.automapperoptions.md)
-* [IPredicate](../interfaces/_core_interfaces_index_.ipredicate.md)
+* [MappingConditions](../interfaces/_core_interfaces_index_.mappingconditions.md)
+* [Predicate](../interfaces/_core_interfaces_index_.predicate.md)
 
 ### Type aliases
 
@@ -21,4 +22,4 @@
 
 Ƭ **AutoMapperTypes**: *"string" | "number" | "date"*
 
-*Defined in [core/interfaces/index.ts:12](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/interfaces/index.ts#L12)*
+*Defined in [core/interfaces/index.ts:20](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/interfaces/index.ts#L20)*

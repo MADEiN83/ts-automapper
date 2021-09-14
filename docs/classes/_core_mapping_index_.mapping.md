@@ -37,7 +37,7 @@
 
 \+ **new Mapping**(`key`: string): *[Mapping](_core_mapping_index_.mapping.md)*
 
-*Defined in [core/mapping/index.ts:7](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/mapping/index.ts#L7)*
+*Defined in [core/mapping/index.ts:7](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/mapping/index.ts#L7)*
 
 **Parameters:**
 
@@ -53,7 +53,7 @@ Name | Type |
 
 • **executor**: *[MappingExecutor](_core_mappingexecutor_index_.mappingexecutor.md)‹*`TSource`*, *`TDestination`*›*
 
-*Defined in [core/mapping/index.ts:6](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/mapping/index.ts#L6)*
+*Defined in [core/mapping/index.ts:6](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/mapping/index.ts#L6)*
 
 ___
 
@@ -61,15 +61,15 @@ ___
 
 • **key**: *string*
 
-*Defined in [core/mapping/index.ts:7](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/mapping/index.ts#L7)*
+*Defined in [core/mapping/index.ts:7](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/mapping/index.ts#L7)*
 
 ___
 
 ###  predicates
 
-• **predicates**: *[IPredicate](../interfaces/_core_interfaces_index_.ipredicate.md)‹*`TSource`*, *`TDestination`*›[]* =  []
+• **predicates**: *[Predicate](../interfaces/_core_interfaces_index_.predicate.md)‹*`TSource`*, *`TDestination`*›[]* =  []
 
-*Defined in [core/mapping/index.ts:5](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/mapping/index.ts#L5)*
+*Defined in [core/mapping/index.ts:5](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/mapping/index.ts#L5)*
 
 ## Methods
 
@@ -77,7 +77,7 @@ ___
 
 ▸ **exec**(`source`: `TSource`): *`TDestination`*
 
-*Defined in [core/mapping/index.ts:23](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/mapping/index.ts#L23)*
+*Defined in [core/mapping/index.ts:23](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/mapping/index.ts#L23)*
 
 **Parameters:**
 
@@ -91,9 +91,9 @@ ___
 
 ###  map
 
-▸ **map**(`sourcePredicate`: function, `destinationPredicate`: function, `options`: [AutoMapperOptions](../interfaces/_core_interfaces_index_.automapperoptions.md)): *[Mapping](_core_mapping_index_.mapping.md)‹*`TSource`*, *`TDestination`*›*
+▸ **map**(`sourcePredicate`: function, `destinationPredicate`: function, `options`: [AutoMapperOptions](../interfaces/_core_interfaces_index_.automapperoptions.md)‹*`TSource`*›): *[Mapping](_core_mapping_index_.mapping.md)‹*`TSource`*, *`TDestination`*›*
 
-*Defined in [core/mapping/index.ts:14](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/mapping/index.ts#L14)*
+*Defined in [core/mapping/index.ts:14](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/mapping/index.ts#L14)*
 
 **Parameters:**
 
@@ -117,6 +117,6 @@ Name | Type |
 ------ | ------ |
 `obj` | `TDestination` |
 
-▪`Default value`  **options**: *[AutoMapperOptions](../interfaces/_core_interfaces_index_.automapperoptions.md)*=  {}
+▪`Default value`  **options**: *[AutoMapperOptions](../interfaces/_core_interfaces_index_.automapperoptions.md)‹*`TSource`*›*=  {}
 
 **Returns:** *[Mapping](_core_mapping_index_.mapping.md)‹*`TSource`*, *`TDestination`*›*

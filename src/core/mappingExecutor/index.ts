@@ -1,5 +1,11 @@
-import { getKeysFromPredicate, setDeepValue } from "../../utils";
-import { Predicate, AutoMapperTypes } from "../interfaces";
+import { Predicate } from "../interfaces";
+
+import {
+  execConditions,
+  execOperation,
+  getValueByPredicate,
+  setDeepValueByPredicate,
+} from "./mapping-executor.utils";
 
 class MappingExecutor<TSource, TDestination> {
   buildDestinationObject = (
@@ -12,55 +18,22 @@ class MappingExecutor<TSource, TDestination> {
       const {
         sourcePredicate,
         destinationPredicate,
-        options: { type = "string", operation = (value: any) => value },
+        options: {
+          type = "string",
+          operation = (value: any) => value,
+          conditions,
+        },
       } = aPredicate;
-      const valueRaw = this.getValueByPredicate(source, sourcePredicate, type);
-      const value = this.execOperation(valueRaw, operation);
+      const valueRaw = getValueByPredicate(source, sourcePredicate, type);
+      const shouldContinue = execConditions(source, conditions);
+      const value = shouldContinue
+        ? execOperation(valueRaw, operation)
+        : undefined;
 
-      this.setDeepValueByPredicate(output, destinationPredicate, value);
+      setDeepValueByPredicate(output, destinationPredicate, value);
     });
 
     return output as TDestination;
-  };
-
-  /*
-   * Private.
-   */
-  private setDeepValueByPredicate = (
-    output: any,
-    predicate: any,
-    value: any
-  ) => {
-    const destinationKeys = getKeysFromPredicate(predicate);
-    setDeepValue(output, destinationKeys.join("."), value);
-  };
-
-  private getValueByPredicate = (
-    source: TSource,
-    sourcePredicate: (obj: TSource) => any,
-    type: AutoMapperTypes
-  ) => {
-    const [value] = [source].map(sourcePredicate);
-    return this.castValue(value, type);
-  };
-
-  private castValue = (value: any, type?: AutoMapperTypes): any => {
-    if (!value) {
-      return;
-    }
-
-    switch (type) {
-      case "string":
-        return value.toString();
-      case "number":
-        return Number(value);
-      case "date":
-        return new Date(value);
-    }
-  };
-
-  private execOperation = (value: any, operation: (value: any) => any): any => {
-    return operation(value);
   };
 }
 

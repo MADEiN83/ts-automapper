@@ -16,10 +16,9 @@
 
 ### Methods
 
+* [clear](_core_automapper_index_.automapper.md#static-clear)
 * [create](_core_automapper_index_.automapper.md#static-create)
-* [createMappingInstance](_core_automapper_index_.automapper.md#static-private-createmappinginstance)
 * [exec](_core_automapper_index_.automapper.md#static-exec)
-* [reset](_core_automapper_index_.automapper.md#static-reset)
 
 ## Properties
 
@@ -27,15 +26,25 @@
 
 ▪ **mappings**: *[Mapping](_core_mapping_index_.mapping.md)‹*any*, *any*›[]* =  []
 
-*Defined in [core/automapper/index.ts:8](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/automapper/index.ts#L8)*
+*Defined in [core/automapper/index.ts:9](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/automapper/index.ts#L9)*
 
 ## Methods
+
+### `Static` clear
+
+▸ **clear**(): *void*
+
+*Defined in [core/automapper/index.ts:71](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/automapper/index.ts#L71)*
+
+**Returns:** *void*
+
+___
 
 ### `Static` create
 
 ▸ **create**<**TSource**, **TDestination**>(`key`: string): *[Mapping](_core_mapping_index_.mapping.md)‹*`TSource`*, *`TDestination`*›*
 
-*Defined in [core/automapper/index.ts:24](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/automapper/index.ts#L24)*
+*Defined in [core/automapper/index.ts:24](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/automapper/index.ts#L24)*
 
 **Type parameters:**
 
@@ -55,27 +64,11 @@ Returns the mapping class.
 
 ___
 
-### `Static` `Private` createMappingInstance
-
-▸ **createMappingInstance**(`key`: string): *[Mapping](_core_mapping_index_.mapping.md)‹*any*, *any*›*
-
-*Defined in [core/automapper/index.ts:50](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/automapper/index.ts#L50)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | string |
-
-**Returns:** *[Mapping](_core_mapping_index_.mapping.md)‹*any*, *any*›*
-
-___
-
 ### `Static` exec
 
 ▸ **exec**<**TSource**, **TDestination**>(`key`: string, `source`: `TSource`): *`TDestination`*
 
-*Defined in [core/automapper/index.ts:30](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/automapper/index.ts#L30)*
+*Defined in [core/automapper/index.ts:47](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/automapper/index.ts#L47)*
 
 **Type parameters:**
 
@@ -85,19 +78,11 @@ ___
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`key` | string |
-`source` | `TSource` |
+Name | Type | Description |
+------ | ------ | ------ |
+`key` | string | The unique key to be able to retrieve the mapping. |
+`source` | `TSource` | The TSource object |
 
 **Returns:** *`TDestination`*
 
-___
-
-### `Static` reset
-
-▸ **reset**(): *void*
-
-*Defined in [core/automapper/index.ts:43](https://github.com/MADEiN83/ts-automapper/blob/eda5030/src/core/automapper/index.ts#L43)*
-
-**Returns:** *void*
+The final object
