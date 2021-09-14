@@ -1,7 +1,11 @@
 import { getKeysFromPredicate, setDeepValue } from "../../utils";
 import { AutoMapperTypes, MappingConditions } from "../interfaces";
 
-export const castValue = (value: any = "", type?: AutoMapperTypes): any => {
+export const castValue = (value: any, type?: AutoMapperTypes): any => {
+  if (!value) {
+    return;
+  }
+
   switch (type) {
     case "string":
       return value.toString();
