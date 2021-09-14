@@ -1,4 +1,4 @@
-import { getKeysFromPredicate, setDeepValue, getDeepValue } from ".";
+import { getKeysFromPredicate, setDeepValue, getDeepValue } from "..";
 
 describe("Utils tests", () => {
   it("[getKeysFromPredicate] should return '[person, firstname]' keys when predicate is 'p => p.person.firstname'", () => {
