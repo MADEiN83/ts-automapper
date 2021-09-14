@@ -3,7 +3,7 @@ import { Input, Output } from "./interface";
 
 describe("AutoMapper tests", () => {
   beforeEach(() => {
-    AutoMapper.reset();
+    AutoMapper.clear();
   });
 
   it("should return 1 when adding only one mapping", () => {
@@ -154,7 +154,7 @@ describe("AutoMapper tests", () => {
     });
   });
 
-  it("should reset all mappings", () => {
+  it("should clear all mappings", () => {
     AutoMapper.create<Input, Output>("key").map(
       (p) => p.updated_at,
       (p) => p.updatedAt
@@ -164,7 +164,7 @@ describe("AutoMapper tests", () => {
     expect(AutoMapper.mappings).toHaveLength(1);
     expect(AutoMapper.mappings[0].key).toEqual("key");
 
-    AutoMapper.reset();
+    AutoMapper.clear();
 
     expect(AutoMapper.mappings).toBeDefined();
     expect(AutoMapper.mappings).toHaveLength(0);

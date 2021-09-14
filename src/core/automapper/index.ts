@@ -24,7 +24,9 @@ class AutoMapper {
   static create = <TSource, TDestination>(
     key: string
   ): Mapping<TSource, TDestination> => {
-    return instantiateMapping(key);
+    const mapping = instantiateMapping(key);
+    AutoMapper.mappings.push(mapping);
+    return mapping;
   };
 
   /**
@@ -63,10 +65,10 @@ class AutoMapper {
    * ```ts
    * import AutoMapper from "ts-automapper";
    *
-   * AutoMapper.reset();
+   * AutoMapper.clear();
    * ```
    */
-  static reset = () => {
+  static clear = () => {
     AutoMapper.mappings = [];
   };
 }
