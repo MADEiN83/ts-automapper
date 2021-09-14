@@ -1,6 +1,6 @@
 import { instantiateMapping } from "../automapper.utils";
 
-describe("AutoMapper tests", () => {
+describe("AutoMapper utils tests", () => {
   it("should instantiate a raw mapping", () => {
     const mapping = instantiateMapping("mappingKey");
     expect(mapping).toBeDefined();
