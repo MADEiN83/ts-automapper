@@ -1,8 +1,8 @@
 import MappingExecutor from "../mappingExecutor";
-import { IPredicate, AutoMapperOptions } from "../interfaces";
+import { Predicate, AutoMapperOptions } from "../interfaces";
 
 class Mapping<TSource, TDestination> {
-  readonly predicates: IPredicate<TSource, TDestination>[] = [];
+  readonly predicates: Predicate<TSource, TDestination>[] = [];
   private executor: MappingExecutor<TSource, TDestination>;
   key: string;
 

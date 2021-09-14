@@ -1,10 +1,10 @@
 import { getKeysFromPredicate, setDeepValue } from "../../utils";
-import { IPredicate, AutoMapperTypes } from "../interfaces";
+import { Predicate, AutoMapperTypes } from "../interfaces";
 
 class MappingExecutor<TSource, TDestination> {
   buildDestinationObject = (
     source: TSource,
-    predicates: IPredicate<TSource, TDestination>[]
+    predicates: Predicate<TSource, TDestination>[]
   ): TDestination => {
     const output = {};
 
