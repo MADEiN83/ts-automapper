@@ -22,4 +22,4 @@
 
 Ƭ **AutoMapperTypes**: *"string" | "number" | "date"*
 
-*Defined in [core/interfaces/index.ts:20](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/interfaces/index.ts#L20)*
+*Defined in [core/interfaces/index.ts:20](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/interfaces/index.ts#L20)*

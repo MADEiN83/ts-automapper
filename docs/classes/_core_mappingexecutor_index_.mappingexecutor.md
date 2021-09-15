@@ -26,7 +26,7 @@
 
 ▸ **buildDestinationObject**(`source`: `TSource`, `predicates`: [Predicate](../interfaces/_core_interfaces_index_.predicate.md)‹*`TSource`*, *`TDestination`*›[]): *`TDestination`*
 
-*Defined in [core/mappingExecutor/index.ts:11](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/mappingExecutor/index.ts#L11)*
+*Defined in [core/mappingExecutor/index.ts:11](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/mappingExecutor/index.ts#L11)*
 
 **Parameters:**
 

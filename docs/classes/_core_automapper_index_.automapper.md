@@ -26,7 +26,7 @@
 
 ▪ **mappings**: *[Mapping](_core_mapping_index_.mapping.md)‹*any*, *any*›[]* =  []
 
-*Defined in [core/automapper/index.ts:9](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/automapper/index.ts#L9)*
+*Defined in [core/automapper/index.ts:9](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/automapper/index.ts#L9)*
 
 ## Methods
 
@@ -34,7 +34,7 @@
 
 ▸ **clear**(): *void*
 
-*Defined in [core/automapper/index.ts:71](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/automapper/index.ts#L71)*
+*Defined in [core/automapper/index.ts:71](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/automapper/index.ts#L71)*
 
 **Returns:** *void*
 
@@ -44,7 +44,7 @@ ___
 
 ▸ **create**<**TSource**, **TDestination**>(`key`: string): *[Mapping](_core_mapping_index_.mapping.md)‹*`TSource`*, *`TDestination`*›*
 
-*Defined in [core/automapper/index.ts:24](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/automapper/index.ts#L24)*
+*Defined in [core/automapper/index.ts:24](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/automapper/index.ts#L24)*
 
 **Type parameters:**
 
@@ -68,7 +68,7 @@ ___
 
 ▸ **exec**<**TSource**, **TDestination**>(`key`: string, `source`: `TSource`): *`TDestination`*
 
-*Defined in [core/automapper/index.ts:47](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/automapper/index.ts#L47)*
+*Defined in [core/automapper/index.ts:47](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/automapper/index.ts#L47)*
 
 **Type parameters:**
 

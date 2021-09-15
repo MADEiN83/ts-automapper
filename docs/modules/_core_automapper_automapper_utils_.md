@@ -16,7 +16,7 @@
 
 ▸ **instantiateMapping**(`key`: string): *[Mapping](../classes/_core_mapping_index_.mapping.md)‹*any*, *any*›*
 
-*Defined in [core/automapper/automapper.utils.ts:4](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/automapper/automapper.utils.ts#L4)*
+*Defined in [core/automapper/automapper.utils.ts:4](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/automapper/automapper.utils.ts#L4)*
 
 **Parameters:**
 

@@ -27,7 +27,7 @@
 
 • **empty**? : *function[]*
 
-*Defined in [core/interfaces/index.ts:14](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/interfaces/index.ts#L14)*
+*Defined in [core/interfaces/index.ts:14](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/interfaces/index.ts#L14)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **equals**? : *function[]*
 
-*Defined in [core/interfaces/index.ts:16](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/interfaces/index.ts#L16)*
+*Defined in [core/interfaces/index.ts:16](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/interfaces/index.ts#L16)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **notEmpty**? : *function[]*
 
-*Defined in [core/interfaces/index.ts:15](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/interfaces/index.ts#L15)*
+*Defined in [core/interfaces/index.ts:15](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/interfaces/index.ts#L15)*
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 • **notEquals**? : *function[]*
 
-*Defined in [core/interfaces/index.ts:17](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/interfaces/index.ts#L17)*
+*Defined in [core/interfaces/index.ts:17](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/interfaces/index.ts#L17)*

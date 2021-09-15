@@ -20,7 +20,7 @@
 
 ▸ **castValue**(`value`: any, `type?`: [AutoMapperTypes](_core_interfaces_index_.md#automappertypes)): *any*
 
-*Defined in [core/mappingExecutor/mapping-executor.utils.ts:4](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/mappingExecutor/mapping-executor.utils.ts#L4)*
+*Defined in [core/mappingExecutor/mapping-executor.utils.ts:4](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/mappingExecutor/mapping-executor.utils.ts#L4)*
 
 **Parameters:**
 
@@ -37,7 +37,7 @@ ___
 
 ▸ **execConditions**<**TSource**>(`source`: `TSource`, `conditions`: [MappingConditions](../interfaces/_core_interfaces_index_.mappingconditions.md)‹*`TSource`*›): *boolean*
 
-*Defined in [core/mappingExecutor/mapping-executor.utils.ts:44](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/mappingExecutor/mapping-executor.utils.ts#L44)*
+*Defined in [core/mappingExecutor/mapping-executor.utils.ts:44](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/mappingExecutor/mapping-executor.utils.ts#L44)*
 
 **Type parameters:**
 
@@ -58,7 +58,7 @@ ___
 
 ▸ **execOperation**(`value`: any, `operation`: function): *any*
 
-*Defined in [core/mappingExecutor/mapping-executor.utils.ts:37](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/mappingExecutor/mapping-executor.utils.ts#L37)*
+*Defined in [core/mappingExecutor/mapping-executor.utils.ts:37](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/mappingExecutor/mapping-executor.utils.ts#L37)*
 
 **Parameters:**
 
@@ -82,7 +82,7 @@ ___
 
 ▸ **getValueByPredicate**<**TSource**>(`source`: `TSource`, `sourcePredicate`: function, `type`: [AutoMapperTypes](_core_interfaces_index_.md#automappertypes)): *any*
 
-*Defined in [core/mappingExecutor/mapping-executor.utils.ts:19](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/mappingExecutor/mapping-executor.utils.ts#L19)*
+*Defined in [core/mappingExecutor/mapping-executor.utils.ts:19](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/mappingExecutor/mapping-executor.utils.ts#L19)*
 
 **Type parameters:**
 
@@ -112,7 +112,7 @@ ___
 
 ▸ **setDeepValueByPredicate**(`output`: any, `predicate`: any, `value`: any): *void*
 
-*Defined in [core/mappingExecutor/mapping-executor.utils.ts:28](https://github.com/MADEiN83/ts-automapper/blob/2939a91/src/core/mappingExecutor/mapping-executor.utils.ts#L28)*
+*Defined in [core/mappingExecutor/mapping-executor.utils.ts:28](https://github.com/MADEiN83/ts-automapper/blob/a1de38d/src/core/mappingExecutor/mapping-executor.utils.ts#L28)*
 
 **Parameters:**
 
