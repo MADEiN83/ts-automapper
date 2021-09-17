@@ -1,4 +1,4 @@
-# ts-automapper [![npm version](https://badge.fury.io/js/ts-automapper.svg)](https://www.npmjs.com/package/ts-automapper) [![Build Status](https://travis-ci.org/MADEiN83/ts-automapper.svg?branch=master)](https://travis-ci.org/MADEiN83/ts-automapper) ![npm](https://img.shields.io/npm/dm/ts-automapper) ![npm](https://img.shields.io/npm/dt/ts-automapper) ![npm bundle size](https://img.shields.io/bundlephobia/min/ts-automapper)
+# ts-automapper [![npm version](https://badge.fury.io/js/ts-automapper.svg)](https://www.npmjs.com/package/ts-automapper) ![npm](https://img.shields.io/npm/dm/ts-automapper) ![npm](https://img.shields.io/npm/dt/ts-automapper) ![npm bundle size](https://img.shields.io/bundlephobia/min/ts-automapper) [![CircleCI](https://circleci.com/gh/MADEiN83/ts-automapper/tree/master.svg?style=svg)](https://circleci.com/gh/MADEiN83/ts-automapper/tree/master)
 
 ## Install
 
@@ -63,22 +63,48 @@ Now:
 import AutoMapper from "ts-automapper";
 
 AutoMapper.create<Person, PersonInput>("editPerson")
-  .map(src => src.firstname, dst => dst.firstname)
-  .map(src => src.lastname, dst => dst.lastname)
-  .map(src => src.email, dst => dst.email)
-  .map(src => src.tel, dst => dst.tel)
-  .map(src => src.address01, dst => dst.address01)
-  .map(src => src.address02, dst => dst.address02)
-  .map(src => src.address03, dst => dst.postalCode, {
-    operation: p => p.split("_")[0]
-  })
-  .map(src => src.address03, dst => dst.city, {
-    operation: p => p.split("_")[1],
-    conditions: {
-      // this field mapping will only work if the `age` property is `not empty`.
-      notEmpty: [(src: Input) => src.age],
+  .map(
+    (src) => src.firstname,
+    (dst) => dst.firstname
+  )
+  .map(
+    (src) => src.lastname,
+    (dst) => dst.lastname
+  )
+  .map(
+    (src) => src.email,
+    (dst) => dst.email
+  )
+  .map(
+    (src) => src.tel,
+    (dst) => dst.tel
+  )
+  .map(
+    (src) => src.address01,
+    (dst) => dst.address01
+  )
+  .map(
+    (src) => src.address02,
+    (dst) => dst.address02
+  )
+  .map(
+    (src) => src.address03,
+    (dst) => dst.postalCode,
+    {
+      operation: (p) => p.split("_")[0],
     }
-  });
+  )
+  .map(
+    (src) => src.address03,
+    (dst) => dst.city,
+    {
+      operation: (p) => p.split("_")[1],
+      conditions: {
+        // this field mapping will only work if the `age` property is `not empty`.
+        notEmpty: [(src: Input) => src.age],
+      },
+    }
+  );
 ```
 
 ```ts
