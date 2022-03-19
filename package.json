@@ -1,13 +1,12 @@
 {
   "name": "ts-automapper",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Magic library for node to be able to transform object to another object",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "coverage": "npx jest --collect-coverage",
-    "doc": "rm -rf docs && typedoc --theme markdown ./src/index.ts && rm docs/README.md && mv docs/globals.md docs/README.md && npm run && cp README.md dist/README.md",
+    "coverage": "npx jest --collect-coverage"
   },
   "author": "Anthony DI STEFANO",
   "homepage": "https://github.com/MADEiN83/ts-automapper",
