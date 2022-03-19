@@ -6,9 +6,9 @@
   "scripts": {
     "prebuild": "rm -rf dist docs",
     "build": "tsc",
-    "postbuild": "npm run doc",
+    "disabled-postbuild": "npm run doc",
     "test": "jest",
-    "doc": "rm -rf docs && typedoc --theme markdown --platform github && rm docs/README.md && mv docs/globals.md docs/README.md && npm run && cp README.md dist/README.md",
+    "doc": "rm -rf docs && typedoc --theme markdown ./src/index.ts && rm docs/README.md && mv docs/globals.md docs/README.md && npm run && cp README.md dist/README.md",
     "coverage": "npx jest --collect-coverage"
   },
   "author": "Anthony DI STEFANO",
@@ -38,8 +38,8 @@
     "jest": "^25.2.3",
     "ts-jest": "^25.2.1",
     "ts-node": "^8.8.1",
-    "typedoc": "^0.15.0",
-    "typedoc-plugin-markdown": "^2.1.0"
+    "typedoc": "^0.22.13",
+    "typedoc-plugin-markdown": "^3.11.14"
   },
   "jest": {
     "transform": {
