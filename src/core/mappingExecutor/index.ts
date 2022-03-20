@@ -1,7 +1,7 @@
 import { Predicate } from "../interfaces";
 import {
   execConditions,
-  execOperation,
+  execTransform,
   getValueByPredicate,
   setDeepValueByPredicate,
 } from "./mapping-executor.utils";
@@ -17,11 +17,18 @@ class MappingExecutor<TSource, TDestination> {
       const {
         sourcePredicate,
         destinationPredicate,
-        options: { castTo, operation, onlyIf },
+        options: { castTo, transform, onlyIf },
       } = aPredicate;
-      const valueRaw = getValueByPredicate(source, sourcePredicate, castTo);
+
+      let value: any;
+
       const shouldContinue = execConditions(source, onlyIf);
-      const value = shouldContinue && execOperation(valueRaw, operation);
+
+      if (shouldContinue) {
+        value = transform
+          ? execTransform(source, transform, castTo)
+          : getValueByPredicate(source, sourcePredicate, castTo);
+      }
 
       setDeepValueByPredicate<TDestination>(
         output,

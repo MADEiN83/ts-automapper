@@ -2,6 +2,6 @@ import { CastToTypes } from "..";
 
 export type AutoMapperOptions<TSource> = {
   castTo?: CastToTypes;
-  operation?: (value: any) => any;
+  transform?: (value: TSource) => any;
   onlyIf?: (value: TSource) => boolean;
 };

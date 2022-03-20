@@ -19,6 +19,8 @@ export const castValue = (value: any, type?: CastToTypes): any => {
       return +value;
     case "date":
       return new Date(value);
+    case "boolean":
+      return [1, "1", "true", "yes"].includes(value.toString().toLowerCase());
     default:
       return value;
   }
@@ -42,16 +44,21 @@ export const setDeepValueByPredicate = <TDestination>(
   setDeepValue(output, destinationKeys.join("."), value);
 };
 
-export const execOperation = (
-  value: any,
-  operation?: (value: any) => any
+export const execTransform = <TSource>(
+  source: TSource,
+  transform: AnyOfTSource<TSource>,
+  type?: CastToTypes
 ): any => {
-  return operation?.(value) || value;
+  const value = transform(source);
+  return type ? castValue(value, type) : value;
 };
 
 export const execConditions = <TSource>(
   source: TSource,
   onlyIf: PropType<AutoMapperOptions<TSource>, "onlyIf">
 ): boolean => {
-  return onlyIf?.(source) || true;
+  if (!onlyIf) {
+    return true;
+  }
+  return onlyIf?.(source);
 };

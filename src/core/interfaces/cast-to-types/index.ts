@@ -1,1 +1,1 @@
-export type CastToTypes = "string" | "number" | "date";
+export type CastToTypes = "string" | "number" | "date" | "boolean";
