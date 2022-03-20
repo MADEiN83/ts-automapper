@@ -8,7 +8,7 @@ import {
 } from "../interfaces";
 
 export const castValue = (value: any, type?: CastToTypes): any => {
-  if (!value) {
+  if (value === null || value === undefined) {
     return;
   }
 
@@ -18,7 +18,8 @@ export const castValue = (value: any, type?: CastToTypes): any => {
     case "number":
       return +value;
     case "date":
-      return new Date(value);
+      const date = new Date(value);
+      return isNaN(date.getTime()) ? undefined : date;
     case "boolean":
       return [1, "1", "true", "yes"].includes(value.toString().toLowerCase());
     default:
