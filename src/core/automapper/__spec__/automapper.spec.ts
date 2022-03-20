@@ -136,7 +136,7 @@ describe("AutoMapper tests", () => {
     });
   });
 
-  it("should map date", () => {
+  it("should map date as undefined", () => {
     AutoMapper.create<Input, Output>("key").map(
       (p) => p.updated_at,
       (p) => p.updatedAt,
