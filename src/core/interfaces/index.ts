@@ -1,20 +1,8 @@
-export interface Predicate<TSource, TDestination> {
-  sourcePredicate: (obj: TSource) => any;
-  destinationPredicate: (obj: TDestination) => any;
-  options: AutoMapperOptions<TSource>;
-}
+import { AutoMapperTypes } from "./automapper-types";
+import { MappingConditions } from "./mapping-conditions";
+import { AutoMapperOptions } from "./automapper-options";
+import { Predicate } from "./predicate";
 
-export interface AutoMapperOptions<TSource> {
-  type?: AutoMapperTypes;
-  operation?: (value: any) => any;
-  conditions?: MappingConditions<TSource>;
-}
+export type PropType<TObj, TProp extends keyof TObj> = TObj[TProp];
 
-export interface MappingConditions<TSource> {
-  empty?: ((obj: TSource) => any)[];
-  notEmpty?: ((obj: TSource) => any)[];
-  equals?: ((obj: TSource) => boolean)[];
-  notEquals?: ((obj: TSource) => boolean)[];
-}
-
-export type AutoMapperTypes = "string" | "number" | "date";
+export { AutoMapperTypes, MappingConditions, AutoMapperOptions, Predicate };

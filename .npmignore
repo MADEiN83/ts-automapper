@@ -6,3 +6,5 @@ tests/
 *.json
 .travis.yml
 index.ts
+dev.ts
+private/

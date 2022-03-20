@@ -1,5 +1,10 @@
 import { getKeysFromPredicate, setDeepValue } from "../../utils";
-import { AutoMapperTypes, MappingConditions } from "../interfaces";
+import {
+  AutoMapperOptions,
+  AutoMapperTypes,
+  MappingConditions,
+  PropType,
+} from "../interfaces";
 
 export const castValue = (value: any, type?: AutoMapperTypes): any => {
   if (!value) {
@@ -10,7 +15,7 @@ export const castValue = (value: any, type?: AutoMapperTypes): any => {
     case "string":
       return value.toString();
     case "number":
-      return Number(value);
+      return +value;
     case "date":
       return new Date(value);
   }
@@ -43,31 +48,7 @@ export const execOperation = (
 
 export const execConditions = <TSource>(
   source: TSource,
-  conditions: MappingConditions<TSource> = {}
+  onlyIf: PropType<AutoMapperOptions<TSource>, "onlyIf">
 ): boolean => {
-  const { empty = [], notEmpty = [], equals = [], notEquals = [] } = conditions;
-
-  const allIsPassing: boolean[] = [];
-
-  empty.forEach((predicate) => {
-    const value = getValueByPredicate(source, predicate, "string");
-    allIsPassing.push(value === undefined || value === null || value === "");
-  });
-
-  notEmpty.forEach((predicate) => {
-    const value = getValueByPredicate(source, predicate, "string");
-    allIsPassing.push(value !== undefined || value !== null || value !== "");
-  });
-
-  equals.forEach((predicate) => {
-    const value = predicate(source);
-    allIsPassing.push(value);
-  });
-
-  notEquals.forEach((predicate) => {
-    const value = predicate(source);
-    allIsPassing.push(!value);
-  });
-
-  return allIsPassing.every((booleanValue) => booleanValue);
+  return onlyIf?.(source) || true;
 };

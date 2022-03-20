@@ -18,14 +18,11 @@ class MappingExecutor<TSource, TDestination> {
       const {
         sourcePredicate,
         destinationPredicate,
-        options: {
-          type = "string",
-          operation = (value: any) => value,
-          conditions,
-        },
+        options: { type = "string", operation = (value: any) => value, onlyIf },
       } = aPredicate;
       const valueRaw = getValueByPredicate(source, sourcePredicate, type);
-      const shouldContinue = execConditions(source, conditions);
+      const shouldContinue = execConditions(source, onlyIf);
+
       const value = shouldContinue
         ? execOperation(valueRaw, operation)
         : undefined;
