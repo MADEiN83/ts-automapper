@@ -1,7 +1,7 @@
-import { AutoMapperTypes, MappingConditions } from "..";
+import { CastToTypes } from "..";
 
 export type AutoMapperOptions<TSource> = {
-  type?: AutoMapperTypes;
+  castTo?: CastToTypes;
   operation?: (value: any) => any;
   onlyIf?: (value: TSource) => boolean;
 };

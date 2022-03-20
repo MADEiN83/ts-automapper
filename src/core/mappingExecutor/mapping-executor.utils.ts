@@ -1,12 +1,13 @@
+import { AnyOfTDestination } from "core/interfaces/utils";
 import { getKeysFromPredicate, setDeepValue } from "../../utils";
 import {
+  AnyOfTSource,
   AutoMapperOptions,
-  AutoMapperTypes,
-  MappingConditions,
+  CastToTypes,
   PropType,
 } from "../interfaces";
 
-export const castValue = (value: any, type?: AutoMapperTypes): any => {
+export const castValue = (value: any, type?: CastToTypes): any => {
   if (!value) {
     return;
   }
@@ -18,21 +19,23 @@ export const castValue = (value: any, type?: AutoMapperTypes): any => {
       return +value;
     case "date":
       return new Date(value);
+    default:
+      return value;
   }
 };
 
 export const getValueByPredicate = <TSource>(
   source: TSource,
-  sourcePredicate: (obj: TSource) => any,
-  type: AutoMapperTypes
+  sourcePredicate: AnyOfTSource<TSource>,
+  type?: CastToTypes
 ) => {
   const [value] = [source].map(sourcePredicate);
   return castValue(value, type);
 };
 
-export const setDeepValueByPredicate = (
-  output: any,
-  predicate: any,
+export const setDeepValueByPredicate = <TDestination>(
+  output: TDestination,
+  predicate: AnyOfTDestination<TDestination>,
   value: any
 ) => {
   const destinationKeys = getKeysFromPredicate(predicate);
@@ -41,9 +44,9 @@ export const setDeepValueByPredicate = (
 
 export const execOperation = (
   value: any,
-  operation: (value: any) => any
+  operation?: (value: any) => any
 ): any => {
-  return operation(value);
+  return operation?.(value) || value;
 };
 
 export const execConditions = <TSource>(

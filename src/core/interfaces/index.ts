@@ -1,8 +1,6 @@
-import { AutoMapperTypes } from "./automapper-types";
-import { MappingConditions } from "./mapping-conditions";
+import { CastToTypes } from "./cast-to-types";
 import { AutoMapperOptions } from "./automapper-options";
 import { Predicate } from "./predicate";
+import { AnyOfTSource, PropType } from "./utils";
 
-export type PropType<TObj, TProp extends keyof TObj> = TObj[TProp];
-
-export { AutoMapperTypes, MappingConditions, AutoMapperOptions, Predicate };
+export { CastToTypes, AutoMapperOptions, Predicate, AnyOfTSource, PropType };

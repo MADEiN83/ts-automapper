@@ -1,5 +1,4 @@
 import { Predicate } from "../interfaces";
-
 import {
   execConditions,
   execOperation,
@@ -12,25 +11,26 @@ class MappingExecutor<TSource, TDestination> {
     source: TSource,
     predicates: Predicate<TSource, TDestination>[]
   ): TDestination => {
-    const output = {};
+    const output = {} as TDestination;
 
     predicates.forEach((aPredicate) => {
       const {
         sourcePredicate,
         destinationPredicate,
-        options: { type = "string", operation = (value: any) => value, onlyIf },
+        options: { castTo, operation, onlyIf },
       } = aPredicate;
-      const valueRaw = getValueByPredicate(source, sourcePredicate, type);
+      const valueRaw = getValueByPredicate(source, sourcePredicate, castTo);
       const shouldContinue = execConditions(source, onlyIf);
+      const value = shouldContinue && execOperation(valueRaw, operation);
 
-      const value = shouldContinue
-        ? execOperation(valueRaw, operation)
-        : undefined;
-
-      setDeepValueByPredicate(output, destinationPredicate, value);
+      setDeepValueByPredicate<TDestination>(
+        output,
+        destinationPredicate,
+        value
+      );
     });
 
-    return output as TDestination;
+    return output;
   };
 }
 
