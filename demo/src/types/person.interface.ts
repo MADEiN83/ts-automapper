@@ -18,4 +18,5 @@ export type Person = {
   vehicles: {
     cars: { brand: string }[];
   };
+  props: Record<string, string | boolean>;
 };

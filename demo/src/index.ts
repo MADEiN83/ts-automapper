@@ -15,6 +15,10 @@ const uglyData: PersonInput = {
   emailAddress: "contact@me.io",
   date: "Sat Jul 24 2021 11:18:47 GMT+0200",
   cars: [{ brand: "Audi" }, { brand: "Tesla" }],
+  props: {
+    nested: true,
+    whyNot: "because",
+  },
 };
 
 /**

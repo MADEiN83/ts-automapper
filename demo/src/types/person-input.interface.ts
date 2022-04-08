@@ -10,4 +10,5 @@ export type PersonInput = {
   emailAddress: string;
   date: string;
   cars: { brand: string }[];
+  props: Record<string, string | boolean>;
 };

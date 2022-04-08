@@ -63,4 +63,8 @@ AutoMapper.create<PersonInput, Person>("personInput_person")
   .map(
     (input) => input.cars,
     (output) => output.vehicles.cars
+  )
+  .map(
+    (input) => input.props,
+    (output) => output.props
   );
