@@ -59,4 +59,8 @@ AutoMapper.create<PersonInput, Person>("personInput_person")
     {
       castTo: "date",
     }
+  )
+  .map(
+    (input) => input.cars,
+    (output) => output.vehicles.cars
   );

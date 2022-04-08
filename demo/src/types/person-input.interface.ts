@@ -9,4 +9,5 @@ export type PersonInput = {
   phone: string;
   emailAddress: string;
   date: string;
+  cars: { brand: string }[];
 };

@@ -14,6 +14,7 @@ const uglyData: PersonInput = {
   phone: "123456789012345678901234567890",
   emailAddress: "contact@me.io",
   date: "Sat Jul 24 2021 11:18:47 GMT+0200",
+  cars: [{ brand: "Audi" }, { brand: "Tesla" }],
 };
 
 /**

@@ -15,4 +15,7 @@ export type Person = {
     email: string;
   };
   updatedAt: Date;
+  vehicles: {
+    cars: { brand: string }[];
+  };
 };
