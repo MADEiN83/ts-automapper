@@ -7,3 +7,5 @@ private
 .env
 deploy.sh
 coverage
+
+dev.ts

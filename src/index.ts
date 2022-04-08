@@ -1,5 +1,5 @@
 import AutoMapper from "./core/automapper";
-import { AutoMapperTypes, AutoMapperOptions } from "./core/interfaces";
+import { CastToTypes, AutoMapperOptions } from "./core/interfaces";
 
 export default AutoMapper;
-export { AutoMapperTypes, AutoMapperOptions };
+export { CastToTypes, AutoMapperOptions };

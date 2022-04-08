@@ -78,7 +78,7 @@ describe("AutoMapper tests", () => {
       (p) => p.age,
       (p) => p.age,
       {
-        type: "number",
+        castTo: "number",
       }
     );
 
@@ -94,8 +94,8 @@ describe("AutoMapper tests", () => {
       (p) => p.first_name,
       (p) => p.firstName,
       {
-        type: "string",
-        operation: (value: string) => value.trim(),
+        transform: (value: Input) => value.first_name?.trim(),
+        castTo: "string",
       }
     );
 
@@ -120,7 +120,7 @@ describe("AutoMapper tests", () => {
       (p) => p.updated_at,
       (p) => p.updatedAt,
       {
-        type: "date",
+        castTo: "date",
       }
     );
 
@@ -136,12 +136,12 @@ describe("AutoMapper tests", () => {
     });
   });
 
-  it("should map date", () => {
+  it("should map date as undefined", () => {
     AutoMapper.create<Input, Output>("key").map(
       (p) => p.updated_at,
       (p) => p.updatedAt,
       {
-        type: "date",
+        castTo: "date",
       }
     );
 
@@ -175,9 +175,7 @@ describe("AutoMapper tests", () => {
       (p) => p.first_name,
       (p) => p.firstName,
       {
-        conditions: {
-          empty: [(src: Input) => src.age],
-        },
+        onlyIf: (src: Input) => src.age === undefined,
       }
     );
 
@@ -195,9 +193,7 @@ describe("AutoMapper tests", () => {
       (p) => p.first_name,
       (p) => p.firstName,
       {
-        conditions: {
-          empty: [(src: Input) => src.age],
-        },
+        onlyIf: (src: Input) => src.age === undefined,
       }
     );
 

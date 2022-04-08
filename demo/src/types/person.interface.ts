@@ -1,4 +1,4 @@
-export interface IPerson {
+export type Person = {
   identity: {
     firstName: string;
     lastName: string;
@@ -15,4 +15,8 @@ export interface IPerson {
     email: string;
   };
   updatedAt: Date;
-}
+  vehicles: {
+    cars: { brand: string }[];
+  };
+  props: Record<string, string | boolean>;
+};

@@ -46,7 +46,7 @@ describe("Mapping tests", () => {
       (src) => src.first_name,
       (dest) => dest.firstName,
       {
-        operation: (data: string) => data.toUpperCase(),
+        transform: (data: Input) => data.first_name?.toUpperCase(),
       }
     );
 
@@ -66,7 +66,7 @@ describe("Mapping tests", () => {
       (src) => src.first_name,
       (dest) => dest.age,
       {
-        type: "number",
+        castTo: "number",
       }
     );
 

@@ -1,8 +1,14 @@
+import { AnyOfTDestination } from "core/interfaces/utils";
 import { getKeysFromPredicate, setDeepValue } from "../../utils";
-import { AutoMapperTypes, MappingConditions } from "../interfaces";
+import {
+  AnyOfTSource,
+  AutoMapperOptions,
+  CastToTypes,
+  PropType,
+} from "../interfaces";
 
-export const castValue = (value: any, type?: AutoMapperTypes): any => {
-  if (!value) {
+export const castValue = (value: any, type?: CastToTypes): any => {
+  if (value === null || value === undefined) {
     return;
   }
 
@@ -10,64 +16,50 @@ export const castValue = (value: any, type?: AutoMapperTypes): any => {
     case "string":
       return value.toString();
     case "number":
-      return Number(value);
+      return +value;
     case "date":
-      return new Date(value);
+      const date = new Date(value);
+      return isNaN(date.getTime()) ? undefined : date;
+    case "boolean":
+      return [1, "1", "true", "yes"].includes(value.toString().toLowerCase());
+    default:
+      return value;
   }
 };
 
 export const getValueByPredicate = <TSource>(
   source: TSource,
-  sourcePredicate: (obj: TSource) => any,
-  type: AutoMapperTypes
+  sourcePredicate: AnyOfTSource<TSource>,
+  type?: CastToTypes
 ) => {
   const [value] = [source].map(sourcePredicate);
   return castValue(value, type);
 };
 
-export const setDeepValueByPredicate = (
-  output: any,
-  predicate: any,
+export const setDeepValueByPredicate = <TDestination>(
+  output: TDestination,
+  predicate: AnyOfTDestination<TDestination>,
   value: any
 ) => {
   const destinationKeys = getKeysFromPredicate(predicate);
   setDeepValue(output, destinationKeys.join("."), value);
 };
 
-export const execOperation = (
-  value: any,
-  operation: (value: any) => any
+export const execTransform = <TSource>(
+  source: TSource,
+  transform: AnyOfTSource<TSource>,
+  type?: CastToTypes
 ): any => {
-  return operation(value);
+  const value = transform(source);
+  return type ? castValue(value, type) : value;
 };
 
 export const execConditions = <TSource>(
   source: TSource,
-  conditions: MappingConditions<TSource> = {}
+  onlyIf: PropType<AutoMapperOptions<TSource>, "onlyIf">
 ): boolean => {
-  const { empty = [], notEmpty = [], equals = [], notEquals = [] } = conditions;
-
-  const allIsPassing: boolean[] = [];
-
-  empty.forEach((predicate) => {
-    const value = getValueByPredicate(source, predicate, "string");
-    allIsPassing.push(value === undefined || value === null || value === "");
-  });
-
-  notEmpty.forEach((predicate) => {
-    const value = getValueByPredicate(source, predicate, "string");
-    allIsPassing.push(value !== undefined || value !== null || value !== "");
-  });
-
-  equals.forEach((predicate) => {
-    const value = predicate(source);
-    allIsPassing.push(value);
-  });
-
-  notEquals.forEach((predicate) => {
-    const value = predicate(source);
-    allIsPassing.push(!value);
-  });
-
-  return allIsPassing.every((booleanValue) => booleanValue);
+  if (!onlyIf) {
+    return true;
+  }
+  return onlyIf?.(source);
 };

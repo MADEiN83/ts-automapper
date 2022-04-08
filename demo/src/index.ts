@@ -1,9 +1,9 @@
 import AutoMapper from "ts-automapper";
 
-import { IPersonInput, IPerson } from "./interfaces";
+import { PersonInput, Person } from "./types";
 import "./mappings";
 
-const uglyData: IPersonInput = {
+const uglyData: PersonInput = {
   first_name: "     Anthony",
   last_name: "MADEiN83  ",
   age: "29",
@@ -14,12 +14,17 @@ const uglyData: IPersonInput = {
   phone: "123456789012345678901234567890",
   emailAddress: "contact@me.io",
   date: "Sat Jul 24 2021 11:18:47 GMT+0200",
+  cars: [{ brand: "Audi" }, { brand: "Tesla" }],
+  props: {
+    nested: true,
+    whyNot: "because",
+  },
 };
 
 /**
  * Simply execute the mapping defined in `person.mapping.ts`.
  */
-const awesomeData = AutoMapper.exec<IPersonInput, IPerson>(
+const awesomeData = AutoMapper.exec<PersonInput, Person>(
   "personInput_person",
   uglyData
 );

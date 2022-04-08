@@ -1,4 +1,4 @@
-export interface IPersonInput {
+export type PersonInput = {
   first_name: string;
   last_name: string;
   age: string;
@@ -9,4 +9,6 @@ export interface IPersonInput {
   phone: string;
   emailAddress: string;
   date: string;
-}
+  cars: { brand: string }[];
+  props: Record<string, string | boolean>;
+};
