@@ -6,21 +6,21 @@ AutoMapper.create<IPersonInput, IPerson>("personInput_person")
     (input) => input.first_name,
     (output) => output.identity.firstName,
     {
-      operation: (p) => p.trim(),
+      transform: (p) => p.first_name.trim(),
     }
   )
   .map(
     (input) => input.last_name,
     (output) => output.identity.lastName,
     {
-      operation: (p) => p.trim(),
+      transform: (p) => p.last_name.trim(),
     }
   )
   .map(
     (input) => input.age,
     (output) => output.identity.age,
     {
-      type: "number",
+      castTo: "number",
     }
   )
   .map(
@@ -31,7 +31,7 @@ AutoMapper.create<IPersonInput, IPerson>("personInput_person")
     (input) => input.postal,
     (output) => output.contact.postalCode,
     {
-      operation: (p) => p.substr(0, 5),
+      transform: (p) => p.postal.substr(0, 5),
     }
   )
   .map(
@@ -46,7 +46,7 @@ AutoMapper.create<IPersonInput, IPerson>("personInput_person")
     (input) => input.phone,
     (output) => output.contact.phone,
     {
-      operation: (p) => p.substr(0, 10),
+      transform: (p) => p.phone.substr(0, 10),
     }
   )
   .map(
@@ -57,6 +57,6 @@ AutoMapper.create<IPersonInput, IPerson>("personInput_person")
     (input) => input.date,
     (output) => output.updatedAt,
     {
-      type: "date",
+      castTo: "date",
     }
   );
