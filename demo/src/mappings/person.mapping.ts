@@ -1,7 +1,7 @@
 import AutoMapper from "ts-automapper";
-import { IPersonInput, IPerson } from "../interfaces";
+import { PersonInput, Person } from "../types";
 
-AutoMapper.create<IPersonInput, IPerson>("personInput_person")
+AutoMapper.create<PersonInput, Person>("personInput_person")
   .map(
     (input) => input.first_name,
     (output) => output.identity.firstName,

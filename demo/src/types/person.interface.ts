@@ -1,4 +1,4 @@
-export interface IPerson {
+export type Person = {
   identity: {
     firstName: string;
     lastName: string;
@@ -15,4 +15,4 @@ export interface IPerson {
     email: string;
   };
   updatedAt: Date;
-}
+};

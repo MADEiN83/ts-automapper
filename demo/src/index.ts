@@ -1,9 +1,9 @@
 import AutoMapper from "ts-automapper";
 
-import { IPersonInput, IPerson } from "./interfaces";
+import { PersonInput, Person } from "./types";
 import "./mappings";
 
-const uglyData: IPersonInput = {
+const uglyData: PersonInput = {
   first_name: "     Anthony",
   last_name: "MADEiN83  ",
   age: "29",
@@ -19,7 +19,7 @@ const uglyData: IPersonInput = {
 /**
  * Simply execute the mapping defined in `person.mapping.ts`.
  */
-const awesomeData = AutoMapper.exec<IPersonInput, IPerson>(
+const awesomeData = AutoMapper.exec<PersonInput, Person>(
   "personInput_person",
   uglyData
 );
