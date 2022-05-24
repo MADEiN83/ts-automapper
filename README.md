@@ -5,7 +5,7 @@
 Install with [npm](https://www.npmjs.com/):
 
 ```bash
-$ npm i -s ts-automapper
+$ npm i --save ts-automapper
 ```
 
 You can read the full documentation [here](https://github.com/MADEiN83/ts-automapper/tree/master/docs).
@@ -91,18 +91,22 @@ AutoMapper.create<Person, PersonInput>("editPerson")
     (src) => src.address03,
     (dst) => dst.postalCode,
     {
-      operation: (p) => p.split("_")[0],
+      transform: (p) => p.split("_")[0],
     }
   )
   .map(
     (src) => src.address03,
     (dst) => dst.city,
     {
-      operation: (p) => p.split("_")[1],
-      conditions: {
-        // this field mapping will only work if the `age` property is `not empty`.
-        notEmpty: [(src: Input) => src.age],
-      },
+      transform: (p) => p.split("_")[1],
+      onlyIf: (src: Input) => !!src.age,
+    }
+  )
+  .map(
+    (src) => src.creationDate,
+    (dst) => dst.createdAt,
+    {
+      castTo: "date",
     }
   );
 ```
@@ -112,20 +116,10 @@ AutoMapper.create<Person, PersonInput>("editPerson")
 import AutoMapper from "ts-automapper";
 
 const createPerson = (personInput: PersonInput): Promise<Person> => {
-  const person: Person = AutoMapper.exec(person, personInput, "createPerson");
+  const person: Person = AutoMapper.exec<PersonInput, Person>(
+    "createPerson",
+    personInput
+  );
   return await this.repository.save(person);
 };
 ```
-
-## TODO
-
-- [x] Create mapping definition
-- [x] Execute a mapping TSource > TDestination
-- [x] Nested mapping (source side)
-- [x] Nested mapping (destination side)
-- [x] Assign existing object
-- [x] More operations
-  - [x] Conditionnal mapping of property (eg.: exists, contains, equals, ...)
-  - [ ] Condition based on other property
-- Better unique key management (I want to remove `key` arg from methods)
-- ...

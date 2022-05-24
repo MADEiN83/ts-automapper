@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "ts-node": "^8.8.1"
+    "ts-node": "^10.8.0"
   },
   "dependencies": {
     "ts-automapper": "../dist"
