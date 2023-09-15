@@ -1,10 +1,7 @@
-node_modules/
 src/
-docs/
-tests/
-
-*.json
-.travis.yml
-index.ts
-dev.ts
-private/
+node_modules
+.github
+.git
+.gitignore
+.npmignore
+.nodemon.json

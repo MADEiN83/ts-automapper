@@ -1,11 +1,3 @@
-node_modules
-
 dist
-
-private
-.git
-.env
-deploy.sh
-coverage
-
-dev.ts
+node_modules
+src/local.ts
