@@ -1,11 +1,5 @@
+lib
 node_modules
-
-dist
-
-private
-.git
-.env
-deploy.sh
+src/local.ts
+example
 coverage
-
-dev.ts
