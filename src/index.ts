@@ -1,3 +1,3 @@
-import TSAutoMapper from "./core/mapper";
+import AutoMapper from "./core/mapper";
 
-export default TSAutoMapper;
+export default AutoMapper;

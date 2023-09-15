@@ -2,7 +2,7 @@ import type { FieldMapType } from "./types";
 import FieldMap from "./field-map";
 import { deepMerge } from "../utils/object.utils";
 
-export default class TSAutoMapper {
+export default class AutoMapper {
   private static mappings: Record<string, FieldMap<any, any>[]> = {};
 
   /**
@@ -14,7 +14,7 @@ export default class TSAutoMapper {
    * type FromType = { age: string };
    * type ToType = { age: number };
    *
-   * TSAutoMapper.create<FromType, ToType>("UNIK_KEY", [
+   * AutoMapper.create<FromType, ToType>("UNIK_KEY", [
    *   ["age", ({ age }) => +(age || 0)],
    * ]);
    * ```
@@ -43,7 +43,7 @@ export default class TSAutoMapper {
    * type FromType = { age: string };
    * type ToType = { age: number };
    *
-   * const output: ToType = TSAutoMapper.apply<FromType, ToType>("UNIK_KEY", { age: "31" });
+   * const output: ToType = AutoMapper.apply<FromType, ToType>("UNIK_KEY", { age: "31" });
    * ```
    */
   static apply = <A, B>(key: string, rawObject: A): B => {
