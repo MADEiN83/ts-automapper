@@ -5,8 +5,10 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "nodemon",
-    "prebuild": "rm -rf dist",
-    "build": "tsc",
+    "prebuild": "rm -rf lib",
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
     "test": "jest"
   },
   "author": "Anthony DI STEFANO",
