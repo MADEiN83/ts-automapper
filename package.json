@@ -1,6 +1,6 @@
 {
   "name": "ts-automapper",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Magic library for node to be able to transform object to another object",
   "main": "dist/index.js",
   "scripts": {
