@@ -3,6 +3,7 @@ import FieldMap from "./field-map";
 import { deepMerge } from "../utils/object.utils";
 
 export default class AutoMapper {
+  // @ts-ignore
   private static mappings: Record<string, FieldMap<any, any>[]> = {};
 
   /**
